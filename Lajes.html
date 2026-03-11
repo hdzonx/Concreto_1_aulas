@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lajes</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+
+<body>
+    <div class="wrapper">
+        <!-- Menu Lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>CONCRETO 2</h2>
+            </div>
+            <ul>
+                <li><a href="Lajes.html">Lajes</a></li>
+                <li><a href="els.html">--------</a></li>
+                <li><a href="pilares_inter.html">--------</a></li>
+                <li><a href="pilares_extremidade.html">-----------</a></li>
+                <li><a href="pilares_canto.html">-----------</a></li>
+                <li><a href="sapata_centrada.html">----------</a></li>
+                <li><a href="sapata_flexo_comp_normal.html">------------</a></li>
+
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">🌙 Mudar Tema</button>
+        </nav>
+
+        <!-- Botão de esconder/mostrar o menu -->
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+
+        <!-- Conteúdo -->
+        <div class="content">
+
+            <header>
+                <h1>Dimensionamento e detalhamento de lajes</h1>
+                <p>Neste tópico será apresentado um exemplo completo de dimensionamento e detalhamento</p>
+            </header>
+
+            <div class="box">
+
+                <h2>Exemplo</h2>
+                <p>Dada a planta de formas de pavimento tipo de edificação mostrada na figura, dimensione e detalhe as
+                    lajes L1 e L2.
+                    Dados:
+                    Concreto C20;
+                    Aço CA-50;
+                    Diãmetro máximo característico do agregado = 19 mm;
+                    Classe de agressividade ambiental I.
+                    Tipo da edificação: Comercial de Call Center, com pé-direito efetivo de 310 cm.
+                    Revestimento de piso de edifícios comerciais de 7 cm de espessura.
+                    Revestimento de teto em Argamassa de cal, cimento e areia de 3 cm.
+                    Todas as vigas suportam parede de bloco de concreto vazado de espessura nominal de 19 cm e
+                    revestimento de 2 cm.
+                </p>
+
+                <figure>
+                    <img src="imagens/laje-1.png" alt="Exemplo - els" width="600">
+                    <figcaption>Planta de formas do exemplo</figcaption>
+                </figure>
+
+            </div>
+            <div class="box">
+                <h2>Solução</h2>
+
+                <h3>Dados de carregamento</h3>
+                <p> Conforme os dados da NBR 6120, os seguintes valores são obtidos:
+                </p>
+                <p>Tipo da edificação: Comercial de Call Center: \(F_{q} = 3 kN/m^2\)</p>
+                <p>Revestimento de piso de edifícios comerciais de 7 cm de espessura: \( F_{g,piso} =1{,}4 kN/m^2\) </p>
+                <p>Revestimento de teto em Argamassa de cal, cimento e areia de 3 cm: \(F_{g,rev} = 19 kN/m^3 \cdot
+                    0{,}03 = 0{,}57 kN/m^2 \)</p>
+                <p>Pesos próprio: \(F_{g,pp} = 25 \cdot 0{,}08 = 2 kN/m^2 \)</p>
+
+                <h3>Combinação de ações no Estado Limite Último</h3>
+
+                \[F_k = 3 + 1{,}4 + 0{,}57 + 2 = 6{,}97 kN/m^2 \]
+                \[F_d = 1{,}4 F_k = 1{,}4 \cdot 6{,}97 = 9{,}76 kN/m^2 \]
+
+                <h3>Laje L1</h3>
+                \[l_x =512 \text{ cm} \]
+                \[l_y =612 \text{ cm} \]
+
+                <p>Laje tipo 2B</p>
+
+                \[ \lambda = l_y/l_x = 612/512 =1{,}20 \]
+
+                \[\mu_x = 4{,}38 \]
+                \[\mu_x' = 9{,}80 \]
+                \[\mu_y = 2{,}52 \]
+
+                <p>A classe de agressividade ambiental I exige um cobrimento nominal de 20 mm. Considerando uma barra de
+                    10 mm de diâmetro (hipotético) tem-se:</p>
+                \[ d' = 2 + 0{,}5 = 2{,}5 \text{ cm} \]
+                \[ d = 8 - 2{,}5 = 5{,}5 \text{ cm} \]
+
+                <p>Cálculo dos momentos fletores</p>
+
+                \[M_d = \mu \frac{F_d \cdot l_x^2 }{100}\]
+
+                \[M_{d,x} = 4{,}38 \frac{ 9{,}76 \cdot 5{,}12^2}{100} = 11{,}21 \text{ } kNm = 1.121 \text{ } kNcm \]
+
+               \[M_{d,x'} = 9{,}80 \frac{ 9{,}76 \cdot 5{,}12^2}{100} = 25{,}07 \text{ } kNm = 2.507 \text{ } kNcm \] 
+
+                  \[M_{d,y} = 2{,}52 \frac{ 9{,}76 \cdot 5{,}12^2}{100} = 6{,}45 \text{ } kNm = 645 \text{ } kNcm \]
+
+                \[K_c = \frac{b_w d^2}{M_d} \]
+
+
+            </div>
+
+
+
+
+
+            <div class="box">
+                <h3>Estado Limite de Formação de Fissuras</h3>
+                <p>Para o momento fletor de fissuração deve-se considerar a resitência à tração inferior (\( f_{ctk,inf}
+                    \))
+                </p>
+                \[f_{ct} = f_{ctk,inf} = 0{,}21 f_{ck} ^{2/3} = 0{,}3 \cdot 20^{2/3} = 1{,}55 \text{ MPa} = 0{,}155
+                \text{
+                kN/cm²} \]
+
+                \[M_r = \frac{\alpha f_{ct} I_c}{y_t} = \frac{1{,}5 \cdot 0{,}155 \cdot 853.333 }{40} =4.960{,}0 \text{
+                kNcm}\]
+
+                <p>Momento solicitante para a combinação rara de ações</p>
+                \[F_{d,ser} = \sum F_{gk} + F_{q1k} + \sum \psi_{1j} F_{qjk} = 10+10 = 20 \text{ kN/m} \]
+                \[M_{d,ser} = 20 \cdot 10^2/8 = 250 \text{ kNm} = 25.000 \text{ kNcm} \]
+
+                <p>Como \(M_{d,ser} \ge M_r\), haverá fissuração (Estádio II).</p>
+            </div>
+
+            <div class="box">
+                <h3>Estado limite de deformação excessiva</h3>
+                <p>Para o estado limite de deformação excessiva, o momento fletor de fissuração deve ser calculado com a
+                    resistência à tração média (\( f_{ctm} \))</p>
+                \[f_{ct} = f_{ctm} = 0{,}3 f_{ck}^{2/3} = 2{,}21 \text{ MPa} = 0{,}221 \text{ KN/cm²}\]
+                \[M_r = \frac{1{,}5 \cdot 0{,}221 \cdot 853.333}{40} = 7.071 \text{ kNcm} \]
+                <p>O momento fletor deve ser calculado para a combinação quase=permanente:</p>
+                \[F_{d,ser} = \sum F_{gik} + \sum \psi_2 F_{qik} = 10+0{,}3 \cdot 10 = 13 \text{ kN/m} \]
+                \[M_{d,ser} = 13 \cdot 10^2/8 = 162 \text{ kNm} = 16.250 \text{ kNcm} \]
+
+                <h4>Posição da linha neutra</h4>
+                <p>A posição da linha neutra se encontra no estádio II</p>
+                \[\alpha_e = \frac{E_s}{E_{cs}} = 210.000/25.545 =8{,}22 \]
+
+                \[ x_{II}^2 + 2\frac{\alpha_e}{b_w}(A_s+A'_s)x_{II}-\frac{2 \alpha_e}{b_w}(A_s d+ A'_s d') \]
+                \[ x_{II}^2 + 10{,}358 x_{II} - 797{,}5 = 0 \]
+                <p>O que resulta em:</p>
+                \[ x_{II} = 22{,}58 \text{ cm} \]
+
+                <h4>Momento de inércia no estádio II</h4>
+                \[I_{II} = \frac{b_w x_{II}^3}{12} + b_w x_{II} \Bigg( \frac{x_{II}}{2} \Bigg)^2 + \alpha_e A_s
+                (d-x_{II})^2 + \alpha_e A'_s(x_{II} - d)^2 \]
+
+                \[I_{II} = 20 \cdot 22{,}25^3/12 + 20 \cdot 22{,}58 (22{,}58/2)^2 + 8{,}22 \cdot 12{,}60 (77-22{,}58)^2
+                \]
+                \[I_{II} =383.483 \text{ cm}^4 \]
+
+
+                <h4>Rigidez equivalente</h4>
+                \[ EI_{eq} = E_{cs} \Bigg( \Bigg( \frac{M_r}{M_{d,ser}} \Bigg)^3 I_c + \Bigg[ 1-\bigg(
+                \frac{M_r}{M_{d,ser}} \bigg)^3\Bigg] I_{II} \Bigg) \le E_{cs}I_c \]
+
+
+                \[ EI_{eq} = 2.554{,}5 \Bigg( \bigg(\frac{7.072}{16.250} \bigg)^3 \cdot 853.333 + \bigg[ 1 - \bigg(
+                \frac{7.072}{16.250} \bigg)^3 \bigg] 383.483 \Bigg) \rightarrow \]
+
+                \[EI_{eq} = 1.078.538.307 \text{ kNcm²}\]
+
+                \[E_{cs} I_c = 2554{,}5 \cdot 853.333 = 2.179.839.149 \text{ kNcm²} \]
+
+                <h4>Flecha imediata</h4>
+                <p>Para viga biapoiada e carregamento linearmente distribuído, a equação será</p>
+
+                \[ a_i = \frac{5}{384} \frac{pl^4}{EI} \]
+                <p>A carga para a combinação quase-permanente já foi determinada anteriormente</p>
+                \[p = F_{d,ser} = 13 \text{ kN/m} = 0{,}13 \text{ KN/cm}\]
+                \[a_i = \frac{5}{384} \frac{0{,}13 \cdot 10.000^4}{1.078.538.307} = 1{,}57 \text{ cm} \]
+
+                <h4>Flecha total</h4>
+                \[ \alpha_f = \frac{\Delta \xi}{1+ 50\rho'} = \frac{2-0{,}68}{1+0} = 1{,}32 \]
+
+                \[a_t = a_i(1+\alpha_f) = 1{,}57(1+1{,}32) = 3{,}64 \text{ cm} \]
+
+                <p>Comparando com a flecha limite para aceitabilidade sensorial:</p>
+                \[ a_{lim} = l/250 = 1.000/250 = 4{,}00 \text{ cm} \]
+
+            </div>
+
+            <div class="box">
+                <h3>Estado limite de abertura de fissuras</h3>
+                <p>O estado limite de abertura de fissuras deve ser avaliado com a combinação frequênte de ações:</p>
+                \[ F_{d,ser} = \sum F_{gik} + \psi_1 F_{q1k} + \sum \psi_2 F_{qjk} \]
+                <p>Considerando \(\psi_1 = 0{,}4:\)</p>
+
+                \[F_{d,ser} = 10 + 0{,}4 \cdot 10 = 14 \text{ kNm}\]
+
+                <p>O momento fletor solicitante é dado por:</p>
+                \[M_{d,ser} = 14 \cdot 10^2/8 = 175 \text{ kNm} = 17.500 \text{ kNcm}\]
+
+                <p>A altura útil real é altura da seção menos o centro de gravidade das armaduras:</p>
+
+                \[d = h - a_{cg} = 80-3{,}5 = 76{,}5 \text{ cm} \]
+
+                <p>A tensão aproximada (cálculo permitido pela NBR 6118) nas armaduras longitudinais será:</p>
+
+                \[\sigma_{si} = \frac{M_{d,ser}}{0{,}85 \cdot d \cdot A_s} = \frac{17.500}{0{,}85 \cdot 76{,}5 \cdot
+                12{,}57} =21{,}4 \text{ kN/cm²} \]
+
+                <p>O valor de \( \eta_1 = 2{,} 25\) para o aço CA-50 (coeficiente de conformação superficial).</p>
+
+                <p>O cálculo da área crítica de concreto de envolvimento da armadura será como a figura abaixo, extraída
+                    da NBR 6118:</p>
+
+
+                <figure>
+                    <img src="images/area-critica.png" alt="area crítica" width="500">
+                    <figcaption>Cálculo da área crítica, conforme a NBR 6118</figcaption>
+                </figure>
+
+                <p>Note que são 4 barras entretanto, devido à simentria, existem apenas duas áreas críticas a serem
+                    determinadas.</p>
+
+                <figure>
+                    <img src="images/area-critica-exemplo.png" alt="area crítica" width="500">
+                    <figcaption>Determinação da área crítica do exemplo</figcaption>
+                </figure>
+
+                <p>O espaçamento entre barras longitudinais próximas será;</p>
+                \[s_L = \frac{ b_w - 2 \cdot(c_{nom}+ \phi_t+\phi_l) - (n-2)\phi_t}{n-1} \]
+                \[s_L = \frac{ 20-2(2+0{,}63+2) - (4-2)2 }{3} = 2{,}25 \text{ cm} \]
+
+                <p>Assim:</p>
+
+                \[ A_{cr1} = (c_{nom} + \phi_t + \phi_L + s_L/2) \cdot (c_{nom} + \phi_t + \phi_L + 7 \phi_L) \]
+
+                \[ A_{cr1} = (2+0{,}63 +2+2{,}25/2 ) \cdot( 2+0{,}63+2+7 \cdot 2 ) = 176{,}28 \text{ cm²} \]
+
+                <p>e</p>
+
+                \[ A_{cr2} = (s_L + \phi_L) \cdot (c_{nom} + \phi_t + \phi_L + 7 \phi_L) \]
+                \[ A_{cr2} = (2{,}25+ 2) \cdot ( 2+0{,}63+2+7 \cdot 2 ) = 79{,}18 \text{ cm²} \]
+
+                <p>As taxas de armaduras críticas serão:</p>
+                \[ \rho_{r1} = \frac{A_{\phi}}{A_{cr1}} = \frac{3{,}14}{176{,}28} = 0{,}0178 \]
+
+                \[ \rho_{r2} = \frac{A_{\phi}}{A_{cr2}} = \frac{3{,}14}{79{,}18} = 0{,}040 \]
+
+
+                <p>O valor da abertura de fissuras, determinado para cada região de envolvimento, será o menor entre os
+                    valores de \(w_k\) abaixo:</p>
+
+                \[w_{k(A)} = \frac{\phi_i}{12{,}5 \eta_1} \frac{\sigma_{si}}{E_{si}} \frac{3 \sigma_{si}}{f_{ct,m}} \]
+
+                \[w_{k(B)} = \frac{\phi_i}{12{,}5 \eta_1} \frac{\sigma_{si}}{E_{si}} \Bigg( \frac{4}{\rho_{ri}} + 45
+                \Bigg)
+                \]
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

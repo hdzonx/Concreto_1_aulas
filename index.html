@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aramdura simples</title>
+    <style>
+        body{
+            background-color: hwb(76 72% 17%);
+        }
+    </style>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+</head>
+<body>
+    <h1>Armadura simples de vigas</h1>
+    <hr>
+    <h2>Exemplo 1 - Dimensionamento de vigas com armaduras simples</h2>
+    <p>Para a viga da figura seguinte, determinar a área de armadura longitudinal de flexão e as deformações na fibra de concreto mais comprimida e na armadura de flexão tracionada. São conhecidos:  
+    </p>
+    <p>$\gamma_c = \gamma_f$ = 1,4;</p>
+    <p>$\gamma_s$ = 1,15;</p>
+    <p>Concreto C30, aço CA-50;</p>
+    <p>$\phi_t$ = 6,3 mm;</p>
+    <p>Brita 1 ($d_{max} = $19 mm);</p>
+    <p>$c_{nom} = $ 2,0 cm;</p>
+
+<img src="imagens/viga-ex001.png" width="600" alt="viga-exemplo001">
+
+    <h2>Solução</h2>
+
+    <p>Primeiramente deve-se definir um valor de altura útil com base nas dimensões da seção transversal da viga. Uma aproximação normalmente adotada e eonctrada subtraindo cerca de 6 cm d altura da viga</p>
+    <p>d = 60 - 6 = 54 (altura útil).</p>
+    <p>Comprimento efetivo:</p>
+    <p>$l_{ef} = l_0 +a_1 +a_2$</p>
+    <p>Sendo $l_0$ a distância livre entre faces dos apoios e $a_1$ e $a_2$ o menor valor entre metade da largura do apoio ou 30% da altura da viga.</p>
+    <p>Assim:</p>
+    <p>$a_1 = a_2 = $ 9 cm.</p>
+    <p>$l_{ef}$ = 670 + 9 + 9 = 688 cm.</p>
+
+    <p>Momento fletor máximo:</p>
+    <p>Por se tratar de viga biaopiada, o momento fletor máximo é dado por:</p>
+
+    <p>$M_k = \frac{F_k \cdot l^2}{8} = \frac{25 \cdot 6,88^2}{8}$ = 147,92 kNm = 1.4792 kNcm
+    </p>
+
+    <p>$M_d = \gamma_f M_k$ = 1,4 x 1.4792 = 20.709 kNcm</p>
+
+    <hr>
+    <h3>Solução por meio de equações teóricas</h3>
+
+    <p>$x_{2,lim} = 0,26 d$ = 14,04 cm</p>
+
+    <p>$x_{3,lim} = 0,63d$ = 34,02 cm</p>
+
+    <p>$M_d = 0,68 b_w x f_{cd} (d - 0,4 x) \rightarrow 20.709 = 0,68 \cdot 18 \cdot x \cdot (3,0/1,4) (54 - 0,4 x)$ $\rightarrow -10,49 x^2 +1.416,3 x -20.709 = 0$</p>
+    
+    <p>Resolvendo a equação de segundo grau, o valor de $x$ é encontrado:</p>
+
+    <p>x = 16,7 cm (Domínio 3)</p>
+
+    <p>Raízes negativas são desprezadas.</p>
+
+    <p>$x/d = 16,7/54 = 0,31 (\le 0,45 \rightarrow Ok)$</p>
+
+    <p>A armadura de aço pode ser calculada como:</p>
+    <p>$A_s = \frac{M_d}{\sigma_{sd} (d - 0,4x)}$</p>
+
+    <p>Sendo $\sigma_{sd} = f_{yk}/\gamma_s$ em $kN/cm^2$</p>
+
+    <p>$A_s = \frac{20.709}{43,5 (54 - 0,4 \cdot 16,7)}$ = 10,06 $cm^2$</p>
+
+    <hr>
+    <h3>Solução por meio de tabelas</h3>
+
+    <p>$K_c = \frac{b_w d^2}{M_d} = \frac{18 \cdot 54^2}{20.709} = 2,53$ $cm^2/kN$</p>
+
+    <p>Da Tabela A-1, página 74 da apostila "Flexão Normal Simples - Vigas" de Bastos:</p>
+    <p>$K_s$ = 0,026 $cm^2/kN$ ($\beta_x = 0,32$)</p>
+    <p>$A_s = K_s \frac{M_d}{d} = 0,026 \cdot \frac{20.709}{54} = 9,97 $ $cm^2$</p>
+    <hr>
+    <h3>Esboço da seção transversal com a armadura</h3>
+    <p>O diâmetro da armadura a ser escolhido precisa satisfazer alguns critérios de boas práticas. Deve-se tomar cuidado para que não seja escolhido diâmetros muito grandes, de tal forma que dificulte o corte, dobra e montagem da armadura na obra. Por outro lado, diâmetros muito pequenos pode faze com que o centro de gravidade das armaduras se desloque em demasia, alterando o valor da altura útil, o que exigiria um novo dimensionamento.
+    </p>
+    <p>Para o problema em questão, optou-se por utilizar $\phi$ = 16 mm</p>
+    <p>A área de uma barra de 16 mm é</p>
+    <p>$A_{16}$ = 2,01 $cm^2$</p>
+    <p>O número de barras será:</p>
+    <p>n = 10,06/2,01 = 5,00 barras</p>
+    <p>Portanto:</p>
+    <p>$5 N_1 \phi 16$</p>
+ 
+
+    <p>    Uma boa prática de detalhamento é garantir que o máximo número de barras possíveis nas camadas inferiores. Mas como saber quantas barras cabem em cada camada? Isso será apresentado no próximo tópico.
+    </p>
+
+    <h3>Cálculo da altura útil real</h3>
+    <p>Antes do cálculo da altura útil real, é necessário fazer as verificações de espaçamento entre as barras.</p>
+
+    <h4>Espaçamento livre horizontal entre barras</h4>
+    O espaçamento horizontal livre entre barras será, conforme a NBR 6118, o maior valor entre 2,0 cm, o diâmetro da armadura longitudinal ou 1,2 vezes o diâmetro máximo característico do agregado. Com isso, notamos que:
+    <p>$a_h = $ 1,2 x 19 = 22,8 mm = 2,3 cm</p>
+    <p>Assim, o número máximo de barras e cada camada pose ser estimado da seguinte maneira:</p>
+    <p>$b_w = 2 \cdot c_{nom} + 2 \cdot \phi_t + n \cdot \phi_l + (n-1) \cdot a_h$</p>
+
+    <p>Sendo:</p>
+    <p>$c_{nom}$ o cobirmento nominal</p>
+    <p>$\phi_t$ o diâmetro da armaduras transversais</p>
+    <p>$\phi_l$ o diâmetro das armaduras longitudinais</p>
+    <p>$n$ é o número de barras na camada.</p>
+
+    <p>O uso da equação anterior pressupõe que o diâmetro das armaduras longitudinais são iguais. Caso não sejam, a mesma lógica pode ser feito usando a somatória dos diâmetros</p>
+    <p>Assim</p>
+    <p>$18 = 2 \cdot 2{,}0 + 2 \cdot 0{,}63 + n \cdot 1{,}6 + (n-1)\cdot 2{,}3$</p>
+    <p>$n=3{,}8$ (Deve ser arredondado para um número inteiro imediatamente inferiro). Logo $n=3$.</p>
+    <p>Portanto, o número máximo de barras de 16 mm por camada é 3. A melhor configuração é dispor 3 barras na camada inferior e 2 na camada superior.</p>
+
+    <h4>Espaçamento livre vertical entre as barras</h4>
+    <p> Conforme a NBR 6118, o espaçamento livre vertical máximo entre as barras deve ser o maior valor entre 2 cm, o diâmetro da armadura longitudinal ou 0,5 vezes o diâmetro máximo característico do agregado. Assim.
+    </p>
+    <p>$a_v$ = 2,0 cm</p>
+
+    <h4>Posição do centro de gravidade das armaduras a partir da face inferior da viga</h4>
+    <p>A posição do centro de gravidade é calculado obtendo-se a posição do centróide das armaduras por meio da equação da mecânica:</p>
+    <p>$a_{cg} = \sum \frac{\bar{y_i} A_i}{\sum A_i}$ </p>
+    <p>$A_i$ = 2,01 cm<sup>2</sup> (área da armadura de 16 mm)</p>
+    <p>$\sum A_i$ = 10,05 cm<sup>2</sup> (somatória de todas as áreas)</p>
+    <p>$\bar{y_1} = c_{nom} + \phi_t + \phi_l/2$ = 3,43 cm</p>
+    <p>$\bar{y}_2 = c_{nom} + \phi_t + \phi_l + a_v + \phi_l/2$ = 7,03 cm</p>
+    <p>$a_{cg} = \frac{3,43 \cdot 3 \cdot 2,01 + 7,03 \cdot 2 \cdot 2,01}{10,05}$ = 6,27 cm</p>
+
+    <h4>Altura útil real</h4>
+    <p>$d = h - a_{cg}$ = 60 - 6,27 = 53,7 cm</p>
+    <p>O valor encontrado para a altura útil real foi bem próximo do estimado inicialmente. Neste caso particular, nenhuma alteração precisa ser feita.</p>
+    <h4>Configuração final</h4>
+    <img src="imagens/secao-ex001.png" alt="">
+
+    <hr>
+    <h3>Determinação da deformação no concreto</h3>
+
+    <p>Em cálculos anteriores foi identificado que a linha neutra da seção transversal da estrutura analisada se encontrava no domínio 3: $x_{2,lim} \le x \le x_{3,lim}$</p>
+    <img src="imagens/dominios-ex001.png" alt="">
+
+    <p>Conforme nota-se numa observação atenta da figura anterior, no domínio 3 o concreto se encontra na situação de máxima deformação específica de encurtamento (0,35%). Logo:</p>
+    <p>$\epsilon_{cd} = \epsilon_{cu} = $ 0,35%</p>
+
+    <p>Para o aço, podemos determinar a deformação por semelhança de trinângulos:</p>
+    <p>$\frac{x}{d} = \frac{\epsilon_{cd}}{\epsilon_{cd} + \epsilon_{sd}}$</p>
+    <p>O que resulta em:</p>
+    <p>$\epsilon_{sd} = $ 0,35/(0,31) - 0,35 = 0,78%</p>
+
+</body>
+</html>

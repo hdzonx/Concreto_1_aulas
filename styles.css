@@ -1,0 +1,232 @@
+/* Resetando margens e padding */
+* {
+  margin: 5;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos do corpo da página */
+body {
+  font-family: ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;;
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+h1,
+h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+h3{
+  color: var(--secundary-color);
+}
+
+button {
+  padding: 2px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #f00eca;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #454ca0;
+}
+
+.escondido {
+  display: none;
+}
+
+#texto {
+  font-size: 16px;
+  color: #333;
+  margin-top: 20px;
+}
+
+
+
+.box {
+  background-color: var(--box-bg);
+  padding: 1.5em;
+  margin: 1.5em 0;
+  border-left: 5px solid var(--border-lef);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s, color 0.3s;
+}
+
+
+/* Wrapper que engloba o menu lateral e o conteúdo */
+.wrapper {
+  display: flex;
+  width: 100%;
+  transition: margin-left 0.3s;
+}
+
+/* Estilos do menu lateral */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text-color);
+  width: 200px;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+/* Menu lateral escondido */
+.sidebar.hidden {
+  transform: translateX(-250px);
+}
+
+/* Logo */
+.sidebar .logo h2 {
+  color: var(--logo-color);
+  margin-bottom: 30px;
+}
+
+/* Links do menu */
+.sidebar ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.sidebar ul li {
+  width: 100%;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: var(--sidebar-link-color);
+  padding: 10px 15px;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
+}
+
+.sidebar ul li a:hover {
+  background-color: var(--sidebar-link-hover-color);
+}
+
+/* Botão de trocar o tema */
+.theme-toggle {
+  background-color: transparent;
+  border: 2px solid var(--sidebar-link-color);
+  color: var(--sidebar-link-color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--sidebar-link-hover-color);
+}
+
+/* Botão de esconder/mostrar o menu */
+.menu-toggle {
+  background-color: var(--sidebar-bg);
+  border: 2px solid var(--sidebar-link-color);
+  color: var(--sidebar-link-color);
+  padding: 10px;
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;  /* Garantir que o botão fique por cima de outros elementos */
+  display: none;  /* Começa invisível em telas grandes */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra para destacar o botão */
+}
+
+/* Estilos do conteúdo */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+  width: 100%;
+  transition: margin-left 0.3s;
+}
+
+/* Header e Main */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+main {
+  text-align: left;
+}
+
+/* Tema Claro */
+:root {
+  --background-color: #f5f5f5;
+  --primary-color: #333;
+  --secundary-color:#174bd8;
+  --text-color: #333;
+  --sidebar-bg: #fff;
+  --sidebar-text-color: #333;
+  --sidebar-link-color: #007BFF;
+  --sidebar-link-hover-color: #0056b3;
+  --logo-color: #007BFF;
+}
+
+/* Tema Escuro */
+body[data-theme="dark"] {
+  --background-color: #445055;
+  --primary-color: #e78f0c;
+  --secundary-color:#bfe70c;
+  --text-color: #f5f5f5;
+  --sidebar-bg: #23272f;
+  --sidebar-text-color: #f5f5f5;
+  --sidebar-link-color: #bfe70c;
+  --sidebar-link-hover-color: #bfe70c;
+  --logo-color: #56e4e4;
+}
+
+
+
+
+/* Mostrar o botão de esconder/mostrar o menu em telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;  /* Torna o botão visível em telas pequenas */
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Menu começa escondido */
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0; /* Quando o menu estiver visível */
+  }
+  figure {
+    text-align: center;
+  }
+  figcaption {
+    font-size: 12px; /* Altera o tamanho da fonte da legenda para 16 pixels */
+    /* Ou use outras unidades como 'em' ou '%' */
+  }
+
+}

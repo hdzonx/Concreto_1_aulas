@@ -1,0 +1,38 @@
+# --- Dependências ---
+node_modules/
+# Se usar npm, é bom ignorar o log de bloqueio
+package-lock.json
+
+# --- Arquivos do Sistema Operacional ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Editores de Código ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- Arquivos de Ambiente/Segurança ---
+.env
+.env.local
+.env.*.local
+secrets.txt
+
+# --- Logs e Arquivos Temporários ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.temp
+
+# --- Outros ---
+# Se o seu build gera uma pasta dist/ ou build/
+dist/
+build/
