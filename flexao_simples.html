@@ -44,28 +44,100 @@
             <div class="box">
 
                 <h2>Exemplo</h2>
-                <p>Dimensionar uma viga de concreto armado, biapoiada, considerando carregamento linearmente distribuído
+                <p>Dimensionar a viga de concreto armado da figura abaixo, biapoiada, considerando carregamento
+                    linearmente distribuído
                     e os seguintes dados:
                 <ul>
-                    <li>Concreto C20;</li>
+                    <li>Concreto C25;</li>
                     <li>Aço CA-50;</li>
                     <li>Classe de agresividade amiental II;</li>
                     <li>\(d_{max} = 19\) mm (brita 1 - diâmetro máximo caracteristico do agregado);</li>
                     <li>\(\phi_t = 5 \) mm (diâmetro do estribo)</li>
-                    <li>Coeficientes de ponderação para as condições normais de carregamento.</li>
-
-
+                    <li>Coeficientes de ponderação para as combinações normais de carregamento.</li>
                 </ul>
                 </p>
 
                 <div class="imagem-container">
-                    <img src="imagens/laje-1.png" alt="Exemplo - els" width="600">
+                    <img src="imagens/viga-exemplo-1.png" alt="Exemplo - els" width="600">
                     <p class="legenda">Planta de formas do exemplo</p>
                 </div>
 
             </div>
             <div class="box">
                 <h2>Solução</h2>
+                <p>A NBR 6118 define, para a classe de agressividade ambiental II, um cobrimento nominal de 30 mm para
+                    vigas.</p>
+                <p>Para as combinações normais de carregamento, a NBR 6118 define: </p>
+                <ul>
+                    <li>\(\gamma_c\) = 1,4</li>
+                    <li>\(\gamma_s\) = 1,15</li>
+                    <li>\(\gamma_f\) = 1,4</li>
+                </ul>
+
+                <h3>Vão efetivo (vão teórico)</h3>
+
+                \[l_{ef} = t_0 + a_1 + a_2\]
+
+                <p>Definindo \(a_1\) e \(a_2\) como \(a_i\), com \(i=1,2\), considera-se o menor valor entre: </p>
+
+                <ul>
+                    <li>\(a_i =t_i/2 \)</li>
+                    <li>\(a_i = 0{,}3h\)</li>
+                </ul>
+
+                <p>Sendo \(t_i\) a largura do apoio e \(h\) a altura da viga.</p>
+
+                <p>Assim:</p>
+                \[l_{ef} = 600 + 12{,}5 + 12{,}5 = 625 \text{ cm}\]
+
+                <h3>Momento fletor</h3>
+                <p>O esquema estático da figura apresenta uma viga biapoiada, assim:</p>
+
+                \[M_k = \frac{F_k \cdot l^2}{8} = \frac{26 \cdot 6{,}25^2}{8} = 126{,}95 \text{ kNm}\]
+
+                <h3>Solução por meio das equações de equilíbrio</h3>
+
+                \[M_d = \gamma_f M_k = 177{,}73 \text{ kNm} = 17.773{,}00 \text{ kNcm}\]
+
+                <p>A altura útil é calculada como:</p>
+
+                \[d = h - a_{cg} \]
+
+                <p>Como não temos o centro de gravidade das armaduras \(a_{cg}\), deve-se estimar um valor para a altura
+                    útil e, posteriormente, chegar se o valor previamente defindo é coerente.</p>
+
+                <p>Adotando \(d = 49\) cm:</p>
+
+                <p>\( x_{2,lim} = 0{,}26 d = 12{,}47 \text{ cm} \)</p>
+                <p>\( x_{3,lim} = 0{,}63 d = 30{,}87 \text{ cm} \)</p>
+
+                <p>A equação de equilíbrio resulta em:</p>
+                \[ M_d = 0{,}68 \cdot b_w \cdot x \cdot f_{cd}(d- 0{,}4x) \]
+                \[ 17.773 = 0{,}68 \cdot 18 \cdot x \cdot \frac{2{,}5}{1{,}4} \cdot (49 - 0{,}4 x) \]
+                \[  \]
+
+                <p>Resolvendo a equação de segundo grau acima:</p>
+                <ul>
+                    <li>\(x_1 =19{,}8 \) cm</li>
+                    <li>\(x_2 =102{,}7 \) cm</li>
+                </ul>
+
+                <p>A solução de valor 102,7 cm não nos atende, pois este valor é maior que a altura da viga.</p>
+
+                <p>Nota-se que o valor de 19,8 está entre \(x_{2,lim}\) e \(x_{3,lim}\), portanto se encontra no domínio 3.</p>
+
+                \[x/d = 19{,}8/49 = 0{,}40 \le 0{,}45 \rightarrow \text{ ok} \]
+
+                <p>No domínio 3 a concreto está comprimido com \( \epsilon_{cu} = 0{,}35\)% e a deformação do aço está entre \( \epsilon_{yd}\) e 1%. Com isso, toda a resistência, tanto do concreto quanto do aço se encontram mobilizadas.</p>
+
+                <p>Para o aço CA-50:</p>
+                \[ \sigma_{sd} = f_{yd} = 50/1{,}15 =43{,}48 \text{ kN/cm²}  \]
+
+                <p>A armadura será:</p>
+
+                \[ A_s = \frac{ M_d }{ \sigma_{sd} (d-0{,}4x) } \]
+
+                \[A_s =  \frac{17.773}{43{,}48 (49-0{,}4 \cdot 19{,}8)} =9{,}95 \text{ cm²} \]
 
 
 
