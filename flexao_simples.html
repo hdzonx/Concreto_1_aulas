@@ -114,7 +114,7 @@
                 <p>A equação de equilíbrio resulta em:</p>
                 \[ M_d = 0{,}68 \cdot b_w \cdot x \cdot f_{cd}(d- 0{,}4x) \]
                 \[ 17.773 = 0{,}68 \cdot 18 \cdot x \cdot \frac{2{,}5}{1{,}4} \cdot (49 - 0{,}4 x) \]
-                \[  \]
+                \[ \]
 
                 <p>Resolvendo a equação de segundo grau acima:</p>
                 <ul>
@@ -124,29 +124,163 @@
 
                 <p>A solução de valor 102,7 cm não nos atende, pois este valor é maior que a altura da viga.</p>
 
-                <p>Nota-se que o valor de 19,8 está entre \(x_{2,lim}\) e \(x_{3,lim}\), portanto se encontra no domínio 3.</p>
+                <p>Nota-se que o valor de 19,8 está entre \(x_{2,lim}\) e \(x_{3,lim}\), portanto se encontra no domínio
+                    3.</p>
 
                 \[x/d = 19{,}8/49 = 0{,}40 \le 0{,}45 \rightarrow \text{ ok} \]
 
-                <p>No domínio 3 a concreto está comprimido com \( \epsilon_{cu} = 0{,}35\)% e a deformação do aço está entre \( \epsilon_{yd}\) e 1%. Com isso, toda a resistência, tanto do concreto quanto do aço se encontram mobilizadas.</p>
+                <p>No domínio 3 o concreto está comprimido com \( \epsilon_{cu} = 0{,}35\)% e a deformação do aço está
+                    entre \( \epsilon_{yd}\) e 1%. Com isso, toda a resistência, tanto do concreto quanto do aço se
+                    encontram mobilizadas.</p>
 
                 <p>Para o aço CA-50:</p>
-                \[ \sigma_{sd} = f_{yd} = 50/1{,}15 =43{,}48 \text{ kN/cm²}  \]
+                \[ \sigma_{sd} = f_{yd} = 50/1{,}15 =43{,}48 \text{ kN/cm²} \]
 
                 <p>A armadura será:</p>
 
                 \[ A_s = \frac{ M_d }{ \sigma_{sd} (d-0{,}4x) } \]
 
-                \[A_s =  \frac{17.773}{43{,}48 (49-0{,}4 \cdot 19{,}8)} =9{,}95 \text{ cm²} \]
+                \[A_s = \frac{17.773}{43{,}48 (49-0{,}4 \cdot 19{,}8)} =9{,}95 \text{ cm²} \]
+
+
+                <h3>Solução por meio dos ábacos de Pinheiro</h3>
+
+                \[ K_c = \frac{b_w d^2}{M_d} = \frac{18 \cdot 49^2 }{17.773} = 2{,}43 \text{ cm²/kN} \]
+
+                <p>Do ábaco de Pinheiro, considerando aço CA-50 e concreto C25:</p>
+                \[ k_s = 0{,}028 \text{ cm²/kN} \]
+                <p>E o valor da relação x/d = 0,42</p>
+
+                \[ A_s = \frac{ k_s M_d }{d} = \frac{0{,}028 \cdot 17.773}{49} = 10{,}15 \text{ cm²} \]
+
+                <p>Nota-se que o valor é bem próximo ao obtido anteriormente, mas com uma fração do tempo para a
+                    solução.</p>
+
+                <h3>Escolha das armaduras e determimação da quantidade</h3>
+
+                <p>A escolha das armaduras é sempre um dilema, sendo ideal o equilíbrio entre quantidade e diâmetro. A
+                    escolha de diâmetros menores resultará em maior número de armaduras, podendo alterar
+                    consideravelmente o centro de gravidade das mesmas. A escolha de diâmetros maiores é benéfica em
+                    relação ao centro de gravidade das armaduras, entretanto aumenta a dificuldade de corte e dobra na
+                    obra, encarecendo a mão de obra. A decisão sobre a adoção de certo diâmetro deve-se basear
+                    principalmente na disponibilizada de material e mão de obra locais e custos envolvidos.</p>
+
+                <p>Para \(\phi = 12{,}5\): \(A_s = 1{,}227\) cm²</p>
+
+                \[n = 9,95/1,227 = 8{,}11 \text{ barras}\]
+
+                <p>Não é possível dispor 8,11 barras, mas sim 9, logo:</p>
+
+                <p>Resultado final: 9 barras de 12,5 mm.</p>
+
+                <h3>Número máximo de barras por camada</h3>
+                <p>Existe uma quantidade limitada de barras que podem se dispostas por camada, para que ocorra a
+                    adequada aderência entre o aço e o concreto. Deve-se portanto, verificar os espaçamentos máximos e
+                    mínimos transversais entre barras.</p>
+
+                <h4>Espaçamento vertical mínimo</h4>
+
+                <p>O espaçamento vertical mínimo (\(a_{v,mín}\)), entre duas barras adjacentes, deve ser o maior dos
+                    valores abaixo:</p>
+                <ul>
+                    <li>2 cm</li>
+                    <li>\(\phi_l\) = 1,25 cm</li>
+                    <li>0,5\(d_{máx}\) = 0,95 cm</li>
+                </ul>
+
+                <p>Portanto, \(a_{v}\) = 2 cm. </p>
+
+
+                <h4>Espaçamento horizontal mínimo</h4>
+
+                <p>Já o espaçamento horizontal mínimo (\(a_{h,mín}\)) deve ser o maior valor entre:</p>
+
+                <ul>
+                    <li>2 cm</li>
+                    <li>\(\phi_l\) = 1,25 cm</li>
+                    <li>1,2\(d_{máx}\) = 2,3 cm</li>
+                </ul>
+
+                <p>Portanto, \(a_{h}\) = 2,3 cm. </p>
+
+
+                <p>Os resultados anteriores mostram que devemos afastar cada barra de, pelo menos, 2 cm na vertical e
+                    2,3 centímetros na horizontal, medido de face a face em cada barra.</p>
+
+                <h3>Número máximo de barras por camada</h3>
+                <p>A situação ideal seria colocarmos todas as barras em uma única camada. Entretanto, na maioria das
+                    vezes, isso não é possível devido à limitação de espaços. O número máximo de barras por camada pode
+                    ser deduzido pela equação:</p>
+
+                \[ b_w = 2 c_{nom} + 2 \phi_t + n \cdot \phi_l + (n-1)a_h \]
+                \[ 18 = 2 \cdot 3 + 2 \cdot 0{,}5 + n \cdot 1{,}25 + (n-1)\cdot 2{,}3 \]
+                <p>Isolando o n na equação anterior:</p>
+                \[n = 3{,}74 \text{ barras}\]
+                <p>Não é possível dispor 3,74 barras na viga, assim a quantidade possível será:</p>
+                \[n=3 \text{ barras}\]
+
+                <p>Uma vez que devemos colocar na viga 9 barras, deverão existir 3 camadas de 3 barras cada.</p>
+
+                <h3>Centroide da armadura de aço e altura útil real</h3>
+
+                <p>O centroide da armadura é calculado pela equação de centroide, da disciplina mecânica vetorial:</p>
+
+                \[ a_{cg} = \frac{ \sum y_i A_i }{ \sum A_i} \]
+
+                <p>Como neste exemplo em particular todas as armaduras possuem a mesma área, a equação pode ser
+                    simplificada por:</p>
+
+                \[ a_{cg} = \frac{ \sum y_i n_i}{ \sum n_i } \]
+
+                <p>Sendo \(n_i\) a quantidade de barras em cada camada.</p>
+
+                \[ a_{cg} = \frac{ 4{,}125 \cdot 3 + 7{,}375 \cdot 3 + 10{,}625 \cdot 3 }{9} = 7{,}375 \text{ cm} \]
+
+                <p>A altura útil real será:</p>
+
+                \[ d = h - a_{cg} = 55 - 7{,}375 = 47{,}6 \text{ cm} \]
+
+                <h3>Verificando a adequabilidade da altura útil adotada</h3>
+                <p>Nota-se que a altura útil real foi menor que a altura útil estimada no início do exercício. Isto é
+                    umn problema em potencial, uma vez que quanto menor a altura útil, menor a resistência mecânica da
+                    viga, ou seja, estamos subestimando a resistência da viga ao usar uma altura útil maior que a real.
+                </p>
+
+                <p>É possível contornar este problema simplesmente adotando um diâmetro maior e refazendo o cálculo do
+                    centroide da armadura e da altura útil, até que ela seja maior ou igual à estimada. Esta
+                    metodologia, entretanto, pode impactar negativamente nos custos da obra.</p>
+
+                <p>Também é possível refazer todos os cálculos utilizando a altura útil real.</p>
+
+                <p>No no caso em específico, é possível notar que a armadura efetiva (9 barras de 12,5 mm) foi maior que
+                    a armadura calculada (8,11 barras de 12,5 mm). Assim:</p>
+                \[A_{s,ef} = 9 \cdot 1{,}227 = 11{,}04 \text{ cm²}\]
+
+                <p>Fazendo o cálculo inverso sem alterar a altura útil (d) e a posição de linha neutra (x), teremos:</p>
+
+                \[ A_s = \frac{ M_d }{ \sigma_{sd} (d-0{,}4x) } \rightarrow 11{,04} = \frac{17.773}{43{,48 (47{,}6 -
+                0{,}4 x)}} \rightarrow \]
+
+                \[x = 26{,}4 \text{ cm} \]
+
+                \[x/d = 0{,}55 > 0{,}45 \rightarrow \text{ Não passa na verificação da norma.} \]
+
+                <p>Como o problema não passou na verificação, precisamos adotar um solução viável.</p>
+
+                <p>Assim, as soluções possível seriam:</p>
+
+                <ul>
+                    <li>Refazer os cálculos sem alterar as dimensões da seção, o que provavelmente recairá em problema de armadura dupla (tópico a ser estudado posteriormente).</li>
+                    <li>Refazer os cálculos aumentando a altura da viga (isso poderá impactar negativamente no projeto arquitetônico, mas seria uma solução de baixo custo).</li>
+                    <li>Refazer os cálculos aumentando a resistência mecânica do concreto (essa solução nem sempre é a mais viável, uma vez que aumenta as dificuldades de controle tecnológico do concreto, particularmente para concreto rodado na obra).</li>
+                    <li> Aumentar o diâmetro da armadura (isso possivelmente aumentará os custos de mão de obra de corte e dobra).</li>                   
+                </ul>
+
+                <p>Nota-se que nenhuma das escolhas acima vêm de forma gratuita, sendo necessário o bom senso e análise das especificidades da obra para a adoção da melhor solução.</p>
 
 
 
             </div>
-
-
-
-
-
 
         </div>
     </div>
