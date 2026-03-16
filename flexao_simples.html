@@ -85,7 +85,7 @@
                     <li>\(a_i = 0{,}3h\)</li>
                 </ul>
 
-                <p>Sendo \(t_i\) a largura do apoio e \(h\) a altura da viga.</p>
+                <p>Sendo \(t_i\) a largura do i-ésimo apoio e \(h\) a altura da viga.</p>
 
                 <p>Assim:</p>
                 \[l_{ef} = 600 + 12{,}5 + 12{,}5 = 625 \text{ cm}\]
@@ -130,7 +130,7 @@
                 \[x/d = 19{,}8/49 = 0{,}40 \le 0{,}45 \rightarrow \text{ ok} \]
 
                 <p>No domínio 3 o concreto está comprimido com \( \epsilon_{cu} = 0{,}35\)% e a deformação do aço está
-                    entre \( \epsilon_{yd}\) e 1%. Com isso, toda a resistência, tanto do concreto quanto do aço se
+                    entre \( \epsilon_{yd}\) e 1%. Com isso, as resistências máximas, tanto do concreto quanto do aço se
                     encontram mobilizadas.</p>
 
                 <p>Para o aço CA-50:</p>
@@ -252,33 +252,60 @@
 
                 <p>Também é possível refazer todos os cálculos utilizando a altura útil real.</p>
 
-                <p>No no caso em específico, é possível notar que a armadura efetiva (9 barras de 12,5 mm) foi maior que
-                    a armadura calculada (8,11 barras de 12,5 mm). Assim:</p>
+                <p>No caso específico deste problema, é possível notar que a armadura efetiva (9 barras de 12,5 mm) foi
+                    maior que a armadura calculada (8,11 barras de 12,5 mm). Assim:</p>
                 \[A_{s,ef} = 9 \cdot 1{,}227 = 11{,}04 \text{ cm²}\]
 
-                <p>Fazendo o cálculo inverso sem alterar a altura útil (d) e a posição de linha neutra (x), teremos:</p>
+                <p>Agora, iremos verificar se os cálculos atendem aos quesitos de dimensionamento para a altura útil
+                    real, sem fazer qualquer alteração nas definições iniciais ou no diâmetro das armaduras.</p>
 
-                \[ A_s = \frac{ M_d }{ \sigma_{sd} (d-0{,}4x) } \rightarrow 11{,04} = \frac{17.773}{43{,48 (47{,}6 -
-                0{,}4 x)}} \rightarrow \]
 
-                \[x = 26{,}4 \text{ cm} \]
 
-                \[x/d = 0{,}55 > 0{,}45 \rightarrow \text{ Não passa na verificação da norma.} \]
+                <p>Verificando a posição da linha neutra considerando o novo valor da altura útil e a armadura
+                    calculada:</p>
 
-                <p>Como o problema não passou na verificação, precisamos adotar um solução viável.</p>
+                \[ M_d = 0{,}68 \cdot b_w \cdot x \cdot f_{cd}(d- 0{,}4x) \]
+                \[ 17.773 = 0{,}68 \cdot 18 \cdot x \cdot \frac{2{,}5}{1{,}4} \cdot (47,6 - 0{,}4 x) \]
+                \[ \]
 
-                <p>Assim, as soluções possível seriam:</p>
-
+                <p>Resolvendo a equação de segundo grau acima:</p>
                 <ul>
-                    <li>Refazer os cálculos sem alterar as dimensões da seção, o que provavelmente recairá em problema de armadura dupla (tópico a ser estudado posteriormente).</li>
-                    <li>Refazer os cálculos aumentando a altura da viga (isso poderá impactar negativamente no projeto arquitetônico, mas seria uma solução de baixo custo).</li>
-                    <li>Refazer os cálculos aumentando a resistência mecânica do concreto (essa solução nem sempre é a mais viável, uma vez que aumenta as dificuldades de controle tecnológico do concreto, particularmente para concreto rodado na obra).</li>
-                    <li> Aumentar o diâmetro da armadura (isso possivelmente aumentará os custos de mão de obra de corte e dobra).</li>                   
+                    <li>\(x =20{,}7 \) cm</li>
                 </ul>
 
-                <p>Nota-se que nenhuma das escolhas acima vêm de forma gratuita, sendo necessário o bom senso e análise das especificidades da obra para a adoção da melhor solução.</p>
+                \[ x/d = 20{,}7/47{,}6 = 0{,}43 < 0{,}45\rightarrow \text{ ok!} \] <p> Importante notar que alinha
+                    neutra
+                    continua no domínio 3 de deformação.</p>
+
+                    \[ A_s = \frac{ M_d }{ \sigma_{sd} (d-0{,}4x) } \]
+
+                    \[A_s = \frac{17.773}{43{,}48 (47,6-0{,}4 \cdot 20{,}7)} =10{,}4 \text{ cm²} \]
+
+                    <p>Como a armadura efetiva é de 11,04 cm², não há necessidade de se fazer nenhuma alteração.</p>
 
 
+                    <p>Caso alguma das verificações não tivesse passado, uma das alternativas abaixo deveriam ser
+                        adotadas:</p>
+
+                    <ul>
+                        <li>Refazer os cálculos sem alterar as dimensões da seção, o que provavelmente recairá em
+                            problema
+                            de armadura dupla (tópico a ser estudado posteriormente).</li>
+                        <li>Refazer os cálculos aumentando a altura da viga (isso poderá impactar negativamente no
+                            projeto
+                            arquitetônico, mas seria uma solução de baixo custo).</li>
+                        <li>Refazer os cálculos aumentando a resistência mecânica do concreto (essa solução nem sempre é
+                            a
+                            mais viável, uma vez que aumenta as dificuldades de controle tecnológico do concreto,
+                            particularmente para concreto rodado na obra).</li>
+                        <li> Aumentar o diâmetro da armadura, permitindo que ela seja dispostas em um número menor de
+                            camadas (isso possivelmente aumentará os custos de mão de obra de corte e dobra).</li>
+                    </ul>
+
+                    <p>Nota-se que nenhuma das escolhas acima vêm de forma gratuita, sendo necessário o bom senso e
+                        análise
+                        das especificidades da obra e do projeto, assim como as definições do cliente, para a adoção da
+                        melhor solução.</p>
 
             </div>
 
