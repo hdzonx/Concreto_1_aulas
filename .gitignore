@@ -3,6 +3,8 @@ node_modules/
 # Se usar npm, é bom ignorar o log de bloqueio
 package-lock.json
 
+teste.html
+
 # --- Arquivos do Sistema Operacional ---
 .DS_Store
 Thumbs.db
