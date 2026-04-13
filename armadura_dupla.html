@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armadura dupla</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"
+  ></script>
+
+  <body>
+    <div class="wrapper">
+      <!-- Menu Lateral -->
+      <nav class="sidebar" id="sidebar">
+        <div class="logo">
+          <h2>CONCRETO 1</h2>
+        </div>
+        <ul>
+          <li><a href="armadura_simples_1.html">Armadura simples 1</a></li>
+          <li><a href="armadura_simples_2.html">Armadura simples 2</a></li>
+          <li><a href="armadura_dupla.html">Armadura dupla</a></li>
+          <li><a href="lajes.html">Lajes</a></li>
+          <li><a href="pilares_extremidade.html">-----------</a></li>
+          <li><a href="pilares_canto.html">-----------</a></li>
+          <li><a href="sapata_centrada.html">----------</a></li>
+          <li><a href="sapata_flexo_comp_normal.html">------------</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙 Mudar Tema</button>
+      </nav>
+
+      <!-- Botão de esconder/mostrar o menu -->
+      <button id="menu-toggle" class="menu-toggle">☰</button>
+
+      <!-- Conteúdo -->
+      <div class="content">
+        <header>
+          <h1>Viga retangular com armadura dupla</h1>
+          <p>
+            Neste tópico será apresentado um exemplo completo de dimensionamento
+          </p>
+        </header>
+
+        <div class="box">
+          <h2>Exemplo</h2>
+          <p>
+            Dimensionar a viga de concreto armado da figura abaixo, biapoiada,
+            considerando carregamento linearmente distribuído e os seguintes
+            dados:
+          </p>
+          <ul>
+            <li>Concreto C20;</li>
+            <li>Aço CA-50;</li>
+            <li>Classe de agresividade amiental II;</li>
+            <li>
+              \(d_{max} = 19\) mm (brita 1 - diâmetro máximo caracteristico do
+              agregado);
+            </li>
+            <li>\(\phi_t = 5 \) mm (diâmetro do estribo)</li>
+            <li>
+              Coeficientes de ponderação para as combinações normais de
+              carregamento.
+            </li>
+          </ul>
+
+          <div class="imagem-container">
+            <img
+              src="imagens/viga-exemplo-1.png"
+              alt="Exemplo - els"
+              width="600"
+            />
+            <p class="legenda">Planta de formas do exemplo</p>
+          </div>
+        </div>
+        <div class="box">
+          <h2>Solução</h2>
+          <p>
+            Será demonstrado apenas a condição de cálculo considerando o uso das
+            tabelas de Pinheiro (coeficientes K).
+          </p>
+
+          \[l_{ef} = 620 \text{ cm}\] \[ M_k = F_k \cdot L^2 /8 = 26 \cdot
+          6{,}20^2/8 = 126{,}95 \text{ kNm} \] \[ M_d = \gamma_f M_k = 1{,}4
+          \cdot 126{,}95 = 177{,}73 \text{ kNm} \]
+
+          <p>
+            Não se conhece o valor da altura útil (d) a priore. Neste caso,
+            deve-se fazer uma estimativa.
+          </p>
+          <p>Valor adotado de d = 49 cm.</p>
+
+          \[x_{2,lim} = 0{,}26d = 12{,}74 \text{ cm} \] \[x_{3,lim} = 0{,}63d =
+          30{,}87 \text{ cm} \] \[K_c = \frac{b_w d^2}{M_d} = \frac{18 \cdot
+          49^2}{17773} = 2{,}43 \text{cm²/kN} \]
+
+          <p>Da tabela A-1, para Concreto C20 e aço CA-50 encontramos:</p>
+          \[ \beta_x =0{,}54 \rightarrow \text{ Não atende!} \]
+          <p>(Lembrando que \(\beta_x \le 0{,}45 \))</p>
+          <p>
+            Neste caso, procederemos os cáculos com a consideração de armadura
+            dupla, assim, devemos adotar, para a armadura tracionada:
+          </p>
+          \[ \beta_x = 0{,}45 \]
+          <p>Logo</p>
+          \[K_c = K_{c,lim} = 2{,}8 \text{ kN/cm²} \rightarrow \text{ (Ver
+          Tabela A-1)} \] \[M_{1,d} = \frac{b_w d^2}{K_{c,lim}} = \frac{18 \cdot
+          49^2}{2{,}8} =15.435 \text{ kNcm} \] \[M_{2,d} = M_d - M_{1,d} =
+          17.773 - 15.435 = 2.338 \text{ kNcm} \] \
+          <h3>Armadura tracionada</h3>
+
+          <p>Adotando d' = 3,5 cm:</p>
+
+          \[ A_s = K_{s,lim} \frac{M_{1,d}}{d} + \frac{M_{2,d}}{f_{yd}(d - d')}
+          \] \[ A_s = 0{,}028 \frac{15.435}{49}+\frac{2.338}{43{,}5(49-3{,}5)} =
+          10{,}00 \text{ cm²} \]
+
+          <h3>Armadrua comprimida</h3>
+
+          \[A'_s = K'_s \frac{M_{2d}}{d-d'}\] \[d'/d = 0{,}071 \rightarrow
+          (Tabela A-5) \rightarrow K'_{s} = 0{,}023 \] \[ A'_s = 0{,}023
+          \frac{2.338}{49-3{,}5} = 1{,}18 \text{ cm²} \]
+
+
+          <h3>Armadura mínima de tração:</h3>
+          \[A_{s,mín} =  \]
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
