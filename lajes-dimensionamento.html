@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lajes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+<body>
+  <div class="wrapper">
+    <!-- Menu Lateral -->
+    <nav class="sidebar" id="sidebar">
+      <div class="logo">
+        <h2>CONCRETO 1</h2>
+      </div>
+      <ul>
+        <li><a href="armadura_simples_1.html">Armadura simples 1</a></li>
+        <li><a href="armadura_simples_2.html">Armadura simples 2</a></li>
+        <li><a href="armadura_dupla.html">Armadura dupla</a></li>
+        <li><a href="lajes-dimensionamento.html">Lajes</a></li>
+        <li><a href="pilares_inter.html">--------</a></li>
+        <li><a href="pilares_extremidade.html">-----------</a></li>
+        <li><a href="pilares_canto.html">-----------</a></li>
+        <li><a href="sapata_centrada.html">----------</a></li>
+        <li><a href="sapata_flexo_comp_normal.html">------------</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle">🌙 Mudar Tema</button>
+    </nav>
+
+    <!-- Botão de esconder/mostrar o menu -->
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+
+    <!-- Conteúdo -->
+    <div class="content">
+      <header>
+        <h1>Dimensionamento e detalhamento de lajes</h1>
+        <p>
+          Neste tópico será apresentado um exemplo completo de dimensionamento
+          e detalhamento
+        </p>
+      </header>
+
+      <div class="box">
+        <h2>Exemplo</h2>
+        <p>
+          Dada a planta de formas de pavimento tipo de edificação mostrada na
+          figura, dimensione e detalhe as lajes L1 e L2. Dados: Concreto C25;
+          Aço CA-50; Diâmetro máximo característico do agregado = 19 mm;
+          Classe de agressividade ambiental I. Tipo da edificação: Comercial
+          de Call Center, com pé-direito efetivo de 310 cm. Revestimento de
+          piso de edifícios comerciais de 7 cm de espessura. Revestimento de
+          teto em Argamassa de cal, cimento e areia de 3 cm. Todas as vigas
+          suportam parede de bloco de concreto vazado de espessura nominal de
+          19 cm e revestimento de 2 cm.
+        </p>
+
+        <div class="imagem-container">
+          <img src="imagens/laje-1.png" alt="Exemplo - els" width="700" />
+          <p class="legenda">Planta de formas do exemplo</p>
+        </div>
+      </div>
+      <div class="box">
+        <h2>Solução para a laje L1</h2>
+
+        <h3>Dados de carregamento</h3>
+        <p>
+          Conforme os dados da NBR 6120, os seguintes valores são obtidos:
+        </p>
+        <p>
+          Tipo da edificação: Comercial de Call Center: \(F_{q} = 3 kN/m^2\)
+        </p>
+        <p>
+          Revestimento de piso de edifícios comerciais de 7 cm de espessura:
+          \( F_{g,piso} =1{,}4 kN/m^2\)
+        </p>
+        <p>
+          Revestimento de teto em Argamassa de cal, cimento e areia de 3 cm:
+          \(F_{g,rev} = 19 kN/m^3 \cdot 0{,}03 = 0{,}57 kN/m^2 \)
+        </p>
+        <p>Pesos próprio: \(F_{g,pp} = 25 \cdot 0{,}11 = 2{,}75 kN/m^2 \)</p>
+
+        <h3>Combinação de ações no Estado Limite Último</h3>
+
+        \[F_k = 3 + 1{,}4 + 0{,}57 + 2{,}75 = 7{,}72 kN/m^2 \] \[F_d = 1{,}4
+        F_k = 1{,}4 \cdot 7{,}72 = 10{,}81 kN/m^2 \]
+
+        <h3>Vãos efetivos</h3>
+        \[l_x =512 \text{ cm} \] \[l_y =612 \text{ cm} \]
+
+        <h3>Cálculo das reações nos apoios</h3>
+
+        <p>Laje tipo 2B</p>
+        <p>Tabela A-5 de Pinheiro para lajes</p>
+
+        \[ \lambda = l_y/l_x = 612/512 =1{,}20 \]
+
+        \[\nu_x = 3{,}01 \]
+        \[\nu'_x = 4{,}41 \]
+        \[\nu_y = 1{,}83 \]
+
+        <p>As reações de apoio das lajes é calculado como:</p>
+        \[V = \nu \frac{p \cdot l_x}{10} \]
+
+        <p>Sendo \(p\) o valor do carregamento em kN/m² e \(l_x\) o menor vão em m. Logo:</p>
+
+        \[V_{d,x} = 16{,}66 \text{ kN/m} \]
+
+        \[V'_{d,x} = 24{,}41 \text{ kN/m} \]
+
+        \[V_{d,y} = 10{,}13 \text{ kN/m} \]
+
+
+        <h3>Cálculo dos momentos fletores</h3>
+
+        \[\mu_x = 4{,}38 \] \[\mu_x'
+        = 9{,}80 \] \[\mu_y = 2{,}52 \]
+
+        <p>
+          A classe de agressividade ambiental I exige um cobrimento nominal de
+          20 mm. Considerando uma barra de 10 mm de diâmetro (hipotético)
+          tem-se:
+        </p>
+        \[ d' = 2 + 0{,}5 = 2{,}5 \text{ cm} \] \[ d = 11 - 2{,}5 = 8{,}5
+        \text{ cm} \]
+
+
+        \[M = \mu \frac{p \cdot l_x^2 }{100}\] \[M_{d,x} = 4{,}38 \frac{
+        10{,}81 \cdot 5{,}12^2}{100} = 12{,}41 \text{ } kNm/m = 1.241 \text{ }
+        kNcm/m \] \[M_{d,x'} = 9{,}80 \frac{ 10{,}81 \cdot 5{,}12^2}{100} =
+        27{,}77 \text{ } kNm/m = 2.777 \text{ } kNcm/m \] \[M_{d,y} = 2{,}52
+        \frac{ 10{,}81 \cdot 5{,}12^2}{100} = 7{,}14 \text{ } kNm/m = 714
+        \text{ } kNcm/m \]
+
+        <h4>Cálculo das armaduras da laje L1</h4>
+        \[K_c = \frac{b_w d^2}{M_d} \] \[ K_{c,x} = 100 \cdot 8{,}5^2/1.241 =
+        5{,}82 \text{ cm²/kN} \] \[ K_{c,x'} = 100 \cdot 8{,}5^2/2.777 =
+        2{,}60 \text{ cm²/kN} \] \[ K_{c,y} = 100 \cdot 8{,}5^2/714 = 10{,}11
+        \text{ cm²/kN} \]
+
+        <p>\[K_{s,x} =0{,}024 \]</p>
+        <p>\[K_{s,x'} =0{,}027 \]</p>
+        <p>\[K_{s,y} =0{,}024 \]</p>
+
+        <p>Importante observar o limite \(\beta_x \le 0{,}45\)</p>
+
+        <p>\[A_s = K_s \frac{M_d}{d}\]</p>
+
+        <p>\[A_{s,x} = 0{,}024 \frac{1241}{8{,}5} = 3{,}5 \text{ cm²/m} \]</p>
+        <p>
+          \[A_{s,x'} = 0{,}027 \frac{2777}{8{,}5} = 8{,}82 \text{ cm²/m} \]
+        </p>
+        <p>\[A_{s,x} = 0{,}024 \frac{714}{8{,}5} = 2{,}02 \text{ cm²/m} \]</p>
+      </div>
+
+      <div class="box">
+        <h3>Escolha das armaduras</h3>
+        <ul>
+          <li>6,3 mm para as armaduras positivas.</li>
+          <li>10 mm para as armaduras negativas.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Disposições construtivas</h3>
+        <h4>Armaduras mínimas negativas</h4>
+        <p>
+          \[ A_{s,mín} = \rho_{min} A_c = 0{,}150\% \cdot 100 \cdot 11 =
+          1{,}65 \text{ cm²} \]
+        </p>
+
+        <h4>Armaduras mínimas positivas</h4>
+        <p>
+          \[ A_{s,mín} = 0{,}67\rho_{min} A_c = 0{,}67 \cdot 0{,}150\% \cdot
+          100 \cdot 11 = 1{,}11 \text{ cm²} \]
+        </p>
+
+        <h4>Espaçamento máximo</h4>
+        <p>
+          O espaçamento máximo transversal entre barras deve ser o menor valor
+          entre:
+        </p>
+        <ul>
+          <li>2h = 22 cm</li>
+          <li>20 cm</li>
+        </ul>
+
+        <p>Portanto:</p>
+        <p>\[s_{máx} = 20 \text{ cm}\]</p>
+
+        <h4>Espaçamento mínimo</h4>
+        <p>O espaçamento mínimo é o maior valor entre:</p>
+        <ul>
+          <li>2 cm</li>
+          <li>
+            \(\phi_l\) = 0,63 cm para as postivias ou 1 cm para as negativas
+          </li>
+          <li>\(1{,}2 d_{máx} = 2{,}28\) cm</li>
+
+          <p>Portanto</p>
+          <p>\[s_{mín} = 2{,}3\text{ cm} \]</p>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Comprimento das armaduras</h3>
+        <h4>Comprimento das armaduras posivitas</h4>
+        <p>
+          As armaduras positivas devem ser levadas até o eixo teórico dos
+          apoios e prologandas de, no mínimo, 4 cm.
+        </p>
+        <p>\[ l_{As,x} = 490 +4+4 = 498 \text{ cm} \]</p>
+        <p>\[ l_{As,y} = 580 +4+4 = 584 \text{ cm} \]</p>
+
+        <h4>Comprimento das armaduras negativas</h4>
+        <p>
+          O comprimento das armaduras negativas dependerá do tipo escolhido da
+          configuração (vide Bastos - Lajes de Concreto Armado).
+        </p>
+
+        <p>Para este problema, será utilizada a equação:</p>
+        <p>\[l_{As,x'}= 2 (0{,}25 l_x + l_b + l_{ganchos} ) \]</p>
+        <p>
+          Na equação anterior, \(l_x\) é o menor vão teórico, \(l_b\) é o
+          comprimento básico de ancoragem e \(l_{ganchos}\) é o comprimento
+          dos ganchos caso existam e zero caso contrário.
+        </p>
+
+        <p>Ainda, é necessário considerar o vão da laje adjacente, uma vez que o valor de \(l_x\) adotado deve ser o
+          maior valor de \(l_x\) dentre estas duas lajes.</p>
+        <p>Assim, a laje L2 possui um vão efetivo \(l_{x}\) = 410+3+3 = 416 cm.</p>
+        <p>Como o menor vão da laje L2 é menor que o menor vão da laje L1, prevalece o vão da laje L1.</p>
+
+        <p>Vale lembrar que este comprimento da armadura negativa é valido tanto para a laje L1 quanto para a laje L2,
+          uma vez que elas são contíguas, passando sobre a viga V2.</p>
+
+        <p>Considerando o comprimento sem o gancho, região de má aderência, \(\phi = 10\) mm e concreto C25, a tabela
+          A-27 de Bastos nos dá um comrpimento de ancoragem de: </p>
+        \[l_b = 54 \text{ cm}\]
+
+        <p>Assim, o comprimento das armaduras negativas fica:</p>
+        \[l_{As,x'} = 2(0{,}25 \cdot 512 + 54) = 364 \text{ cm}\]
+        <p>Obs: A laje L1 só pode ser detalhada depois do cálculo dos momentos da laje L2.</p>
+
+
+        <div class="box">
+          <h2>Solução para a laje L2</h2>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
