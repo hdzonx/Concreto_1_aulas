@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="box">
-        <h2>Solução para a laje L1</h2>
+        <h2>Solução descritiva para a laje L1</h2>
 
         <h3>Dados de carregamento</h3>
         <p>
@@ -88,14 +88,14 @@
         F_k = 1{,}4 \cdot 7{,}72 = 10{,}81 kN/m^2 \]
 
         <h3>Vãos efetivos</h3>
-        \[l_x =512 \text{ cm} \] \[l_y =612 \text{ cm} \]
+        \[l_x =507 \text{ cm} \] \[l_y =607 \text{ cm} \]
 
         <h3>Cálculo das reações nos apoios</h3>
 
         <p>Laje tipo 2B</p>
         <p>Tabela A-5 de Pinheiro para lajes</p>
 
-        \[ \lambda = l_y/l_x = 612/512 =1{,}20 \]
+        \[ \lambda = l_y/l_x = 607/507 =1{,}20 \]
 
         \[\nu_x = 3{,}01 \]
         \[\nu'_x = 4{,}41 \]
@@ -128,10 +128,10 @@
 
 
         \[M = \mu \frac{p \cdot l_x^2 }{100}\] \[M_{d,x} = 4{,}38 \frac{
-        10{,}81 \cdot 5{,}12^2}{100} = 12{,}41 \text{ } kNm/m = 1.241 \text{ }
-        kNcm/m \] \[M_{d,x'} = 9{,}80 \frac{ 10{,}81 \cdot 5{,}12^2}{100} =
-        27{,}77 \text{ } kNm/m = 2.777 \text{ } kNcm/m \] \[M_{d,y} = 2{,}52
-        \frac{ 10{,}81 \cdot 5{,}12^2}{100} = 7{,}14 \text{ } kNm/m = 714
+        10{,}81 \cdot 5{,}07^2}{100} = 12{,}20 \text{ } kNm/m = 1.220 \text{ }
+        kNcm/m \] \[M_{d,x'} = 9{,}80 \frac{ 10{,}81 \cdot 5{,}07^2}{100} =
+        27{,}20 \text{ } kNm/m = 2.720 \text{ } kNcm/m \] \[M_{d,y} = 2{,}52
+        \frac{ 10{,}81 \cdot 5{,}07^2}{100} = 7{,}2 \text{ } kNm/m = 720
         \text{ } kNcm/m \]
 
         <h4>Cálculo das armaduras da laje L1</h4>
@@ -148,24 +148,206 @@
 
         <p>\[A_s = K_s \frac{M_d}{d}\]</p>
 
-        <p>\[A_{s,x} = 0{,}024 \frac{1241}{8{,}5} = 3{,}5 \text{ cm²/m} \]</p>
+        <p>\[A_{s,x} = 0{,}024 \frac{1241}{8{,}5} = 3{,}44 \text{ cm²/m} \]</p>
         <p>
-          \[A_{s,x'} = 0{,}027 \frac{2777}{8{,}5} = 8{,}82 \text{ cm²/m} \]
+          \[A_{s,x'} = 0{,}027 \frac{2777}{8{,}5} = 8{,}64 \text{ cm²/m} \]
         </p>
-        <p>\[A_{s,x} = 0{,}024 \frac{714}{8{,}5} = 2{,}02 \text{ cm²/m} \]</p>
+        <p>\[A_{s,x} = 0{,}024 \frac{714}{8{,}5} = 2{,}03 \text{ cm²/m} \]</p>
       </div>
 
       <div class="box">
+        <h2>Dimensionamento das lajes L1, L2 e L3</h2>
+
+        <p>O dimensionamento das lajes L1, L2 e L3 são mostrados nas tabelas abaixo.</p>
+        <table>
+          <caption>
+            Cálculo dos momentos fletores das lajes em kNm/m
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Laje</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">\( \lambda \)</th>
+              <th scope="col">\( \mu_x \)</th>
+              <th scope="col">\( \mu'_x \)</th>
+              <th scope="col">\( \mu_y \)</th>
+              <th scope="col">\( \mu'_x \)</th>
+              <th scope="col">\( l_x \)</th>
+              <th scope="row">\( M_{dx} \)</th>
+              <th scope="row">\( M'_{dx} \)</th>
+              <th scope="row">\( M_{dy} \)</th>
+              <th scope="row">\( M'_{dy} \)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">L1</th>
+              <th scope="row">2B</th>
+              <th scope="row">1,20</th>
+              <th scope="row">4,38</th>
+              <th scope="row">9,80</th>
+              <th scope="row">2,59</th>
+              <th scope="row">-</th>
+              <th scope="row">5,07</th>
+              <th scope="row">12,2</th>
+              <th scope="row">27,2</th>
+              <th scope="row">7,2</th>
+              <th scope="row">-</th>
+
+
+            </tr>
+            <tr>
+              <th scope="row">L2</th>
+              <th scope="row">3</th>
+              <th scope="row">1,33</th>
+              <th scope="row">4,06</th>
+              <th scope="row">9,37</th>
+              <th scope="row">2,50</th>
+              <th scope="row">7,81</th>
+              <th scope="row">4,57</th>
+              <th scope="row">9,2</th>
+              <th scope="row">21,2</th>
+              <th scope="row">5,6</th>
+              <th scope="row">17,0</th>
+
+            </tr>
+            <tr>
+              <th scope="row">L3</th>
+              <th scope="row">2B</th>
+              <th scope="row">1,11</th>
+              <th scope="row">3,99</th>
+              <th scope="row">9,17</th>
+              <th scope="row">2,76</th>
+              <th scope="row">-</th>
+              <th scope="row">5,07</th>
+              <th scope="row">9,0</th>
+              <th scope="row">20,7</th>
+              <th scope="row">6,2</th>
+              <th scope="row">-</th>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Compatibilização e determinação das armaduras negativas</h3>
+
+        <p>A compatibilização dos momentos fletores e o cálculo das armaduras negativas são mostrados nas tabela
+          seguinte.</p>
+
+
+        <table>
+          <caption>
+            Compatibilização dos momentos fletores e cálculo das armaduras negativas
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Lajes</th>
+              <th scope="col">\( M'_{d-} (\text{kNm}) \)</th>
+              <th scope="col">\( M'_{d-} (\text{kNcm}) \)</th>
+              <th scope="col">\( d (\text{cm}) \)</th>
+              <th scope="col">\( K_c (\text{ cm²/kN}) \)</th>
+              <th scope="col">\( K_s (\text{ cm²/kN}) \)</th>
+              <th scope="col">\( A_s (\text{ cm²}) \)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">L1 e L2</th>
+              <th scope="row">27,2</th>
+              <th scope="row">2.720,0</th>
+              <th scope="row">8,5</th>
+              <th scope="row">2,65</th>
+              <th scope="row">0,027</th>
+              <th scope="row">8,64</th>
+            </tr>
+            <tr>
+              <th scope="row">L2 e L3</th>
+              <th scope="row">21,2</th>
+              <th scope="row">2.120,0</th>
+              <th scope="row">8,5</th>
+              <th scope="row">3,4</th>
+              <th scope="row">0,026</th>
+              <th scope="row">6,48</th>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <h3>Compatibilização e cálculo das armaduras positivas</h3>
+
+        A compatibilização e o cálculo das armaduras positivas são mostrados na tabela abaixo.
+        <table>
+          <caption>
+            Compatibilização dos momentos fletores e cálculo das armaduras positivas
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Laje</th>
+              <th scope="col">\( M_{dx} (\text{kNcm}) \)</th>
+              <th scope="col">\( M_{dy} (\text{kNcm}) \)</th>
+              <th scope="col">\( d (\text{cm}) \)</th>
+              <th scope="col">\( K_{c,x} \)</th>
+              <th scope="col">\( K_{c,y} \)</th>
+              <th scope="col">\( K_{s,x} \)</th>
+              <th scope="col">\( K_{s,y} \)</th>
+              <th scope="col">\( A_{s,x} (\text{ cm²}) \)</th>
+              <th scope="col">\( A_{s,y} (\text{ cm²}) \)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">L1</th>
+              <th scope="row">1.220,0</th>
+              <th scope="row">720,0</th>
+              <th scope="row">8,5</th>
+              <th scope="row">5,9</th>
+              <th scope="row">10,0</th>
+              <th scope="row">0,024</th>
+              <th scope="row">0,024</th>
+              <th scope="row">3,44</th>
+              <th scope="row">2,03
+              </th>
+            </tr>
+            <tr>
+              <th scope="row">L2</th>
+              <th scope="row">920,0</th>
+              <th scope="row">560,0</th>
+              <th scope="row">8,5</th>
+              <th scope="row">7,8</th>
+              <th scope="row">12,9</th>
+              <th scope="row">0,024</th>
+              <th scope="row">0,024</th>
+              <th scope="row">2,59</th>
+              <th scope="row">1,58</th>
+            </tr>
+            <tr>
+              <th scope="row">L3</th>
+              <th scope="row">900,0</th>
+              <th scope="row">620,0</th>
+              <th scope="row">8,5</th>
+              <th scope="row">8,02</th>
+              <th scope="row">11,7</th>
+              <th scope="row">0,024</th>
+              <th scope="row">0,024</th>
+              <th scope="row">2,54</th>
+              <th scope="row">1,75</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <div class="box">
+
+        <h2>Disposições construtivas</h2>
         <h3>Escolha das armaduras</h3>
         <ul>
           <li>6,3 mm para as armaduras positivas.</li>
           <li>10 mm para as armaduras negativas.</li>
         </ul>
-      </div>
 
-      <div class="box">
-        <h3>Disposições construtivas</h3>
-        <h4>Armaduras mínimas negativas</h4>
+        
+        <h3>Armaduras mínimas negativas</h3>
         <p>
           \[ A_{s,mín} = \rho_{min} A_c = 0{,}150\% \cdot 100 \cdot 11 =
           1{,}65 \text{ cm²} \]
@@ -243,14 +425,6 @@
         <p>Assim, o comprimento das armaduras negativas fica:</p>
         \[l_{As,x'} = 2(0{,}25 \cdot 512 + 54) = 364 \text{ cm}\]
         <p>Obs: A laje L1 só pode ser detalhada depois do cálculo dos momentos da laje L2.</p>
-
-
-        <div class="box">
-          <h2>Solução para a laje L2</h2>
-
-
-        </div>
-
       </div>
     </div>
   </div>

@@ -11,7 +11,7 @@ body {
   font-family: "Newsreader", serif;
   line-height: 1.7;
   /* Color Emoji;*/
-  font-size: 22px;
+  font-size: 18px;
   display: flex;
   min-height: 100vh;
   background-color: var(--background-color);
@@ -264,4 +264,66 @@ body[data-theme="dark"] {
     /* Ou use outras unidades como 'em' ou '%' */
   }
 
+}
+
+table {
+  color: var(--primary-color);
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid rgb(38, 2, 49);
+  font-family: sans-serif;
+  font-size: 1.0rem;
+  letter-spacing: 1px;
+}
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* 1. Cor fixa para o cabeçalho (primeira linha) */
+th {
+  text-align: center;
+  background-color: #bce092;
+  /* Verde */
+  color: rgb(10, 9, 9);
+}
+
+/* Linhas pares */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Linhas ímpares */
+tr:nth-child(odd) {
+  background-color: #bd1a1a;
+}
+
+
+thead,
+tfoot {
+  background-color: var(--background-color);
+}
+
+th,
+td {
+  border: 1px solid var(--background-color);
+  padding: 8px 10px;
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody>tr:nth-of-type(even) {
+  background-color: var(--background-color);
+}
+
+tfoot th {
+  text-align: center;
+}
+
+tfoot td {
+  font-weight: bold;
 }
