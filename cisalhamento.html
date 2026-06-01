@@ -1,147 +1,224 @@
 <!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armadura simples</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  ></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+      },
+      svg: {
+        fontCache: "global",
+      },
+    };
+  </script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Armadura simples</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"],
-      ],
-    },
-    svg: {
-      fontCache: "global",
-    },
-  };
-</script>
+  <body>
+    <div class="wrapper">
+      <!-- Menu Lateral -->
+      <nav class="sidebar" id="sidebar">
+        <div class="logo">
+          <h2>CONCRETO 1</h2>
+        </div>
+        <ul>
+          <li><a href="armadura_simples_1.html">Armadura simples 1</a></li>
+          <li><a href="armadura_simples_2.html">Armadura simples 2</a></li>
+          <li><a href="armadura_dupla.html">Armadura dupla</a></li>
+          <li><a href="lajes-dimensionamento.html">Lajes</a></li>
+          <li><a href="cisalhamento.html">Cisalhamento</a></li>
+          <li><a href="pilares_canto.html">-----------</a></li>
+          <li><a href="sapata_centrada.html">----------</a></li>
+          <li><a href="sapata_flexo_comp_normal.html">------------</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙 Mudar Tema</button>
+      </nav>
 
-<body>
-  <div class="wrapper">
-    <!-- Menu Lateral -->
-    <nav class="sidebar" id="sidebar">
-      <div class="logo">
-        <h2>CONCRETO 1</h2>
-      </div>
-      <ul>
-        <li><a href="armadura_simples_1.html">Armadura simples 1</a></li>
-        <li><a href="armadura_simples_2.html">Armadura simples 2</a></li>
-        <li><a href="armadura_dupla.html">Armadura dupla</a></li>
-        <li><a href="lajes-dimensionamento.html">Lajes</a></li>
-        <li><a href="cisalhamento.html">Cisalhamento</a></li>
-        <li><a href="pilares_canto.html">-----------</a></li>
-        <li><a href="sapata_centrada.html">----------</a></li>
-        <li><a href="sapata_flexo_comp_normal.html">------------</a></li>
-      </ul>
-      <button id="theme-toggle" class="theme-toggle">🌙 Mudar Tema</button>
-    </nav>
+      <!-- Botão de esconder/mostrar o menu -->
+      <button id="menu-toggle" class="menu-toggle">☰</button>
 
-    <!-- Botão de esconder/mostrar o menu -->
-    <button id="menu-toggle" class="menu-toggle">☰</button>
+      <!-- Conteúdo -->
+      <div class="content">
+        <header>
+          <h1>Viga submetida a esforço de cisalhamento</h1>
+          <p>
+            Neste tópico será apresentado um exemplo completo de dimensionamento
+          </p>
+        </header>
 
-    <!-- Conteúdo -->
-    <div class="content">
-      <header>
-        <h1>Viga submetida a esforço de cisalhamento</h1>
-        <p>
-          Neste tópico será apresentado um exemplo completo de dimensionamento
-        </p>
-      </header>
+        <div class="box">
+          <h2>Exemplo</h2>
+          <p>
+            Para a viga da figura seguinte, dimensionar e detalhar a armadura de
+            cisalhamento (estribos) usando o modelo de cálculo I. São
+            conhecidos:
+          </p>
+          <p>$\gamma_c = \gamma_f$ = 1,4;</p>
+          <p>$\gamma_s$ = 1,15;</p>
+          <p>Concreto C20, aço CA-50;</p>
+          <p>Brita 1 ($d_{max} = $19 mm);</p>
+          <p>$c_{nom} = $ 2,0 cm;</p>
 
-      <div class="box">
-        <h2>Exemplo</h2>
-        <p>
-          Para a viga da figura seguinte, dimensionar e detalhar a armadura de cisalhamento (estribos) usando o modelo
-          de cálculo I. São conhecidos:
-        </p>
-        <p>$\gamma_c = \gamma_f$ = 1,4;</p>
-        <p>$\gamma_s$ = 1,15;</p>
-        <p>Concreto C20, aço CA-50;</p>
-        <p>Brita 1 ($d_{max} = $19 mm);</p>
-        <p>$c_{nom} = $ 2,0 cm;</p>
+          <div class="imagem-container">
+            <img src="imagens/viga-ex001.png" alt="Exemplo - els" width="600" />
+            <p class="legenda">Planta de formas do exemplo</p>
+          </div>
+        </div>
+        <div class="box">
+          <h2>Solução</h2>
+          <h3>Força cortante de cálculo</h3>
+          <p>
+            O primeiro passo é construir o diagrama de força cortante e
+            determinar o valor da força cortante máxima. Para a viga do
+            problema:
+          </p>
+          \[V_k = 86 \text{ kN}\] \[ V_{sd} = \gamma_f V_k = 120{,}4 \text{ kN}
+          \]
 
-        <div class="imagem-container">
-          <img src="imagens/viga-ex001.png" alt="Exemplo - els" width="600" />
-          <p class="legenda">Planta de formas do exemplo</p>
+          <h3>Esmagamento das bielas de compressão</h3>
+
+          <p>
+            Primeiramente é necessário satisfazer a condição de esmagamento das
+            bielas de compressão:
+          </p>
+          \[ V_{sd} \le V_{Rd2} \]
+          <p>e</p>
+          \[ V_{Rd2} = 0{,}27 \Bigg( 1 - \frac{f_{ck}}{250} \Bigg) f_{cd} \cdot
+          b_w \cdot d \]
+          <p>Considerando a altura útil de 54 cm, tem-se:</p>
+          \[ V_{rd2} = 0{,}27 \Bigg( 1- \frac{20}{250} \Bigg)
+          \frac{2{,}0}{1{,}4} \cdot 18 \cdot 54 = 344{,}9 \text{ KN} \]
+          <p>
+            Portanto, a condição acima é satisfeita, não ocorrendo o esmagamento
+            das bielas. Logo, podemos prosseguir com os cálculos.
+          </p>
+
+          <h3>Cálculo da armadura mínima</h3>
+
+          <p>A armadura mínima na condição do estribos a 90° é:</p>
+          \[A_{sw,mín} = \frac{20 f_{ctm}}{f_{ywk}} b_w \] \[f_{ctm} = 0{,}3
+          f_{ck}^{2/3} = 2{,}21 \text{ MPa}\] \[A_{sw,mín} = \frac{20 \cdot
+          0{,}221}{50}\cdot 18 = 1{,}59 \text{ cm²} \]
+
+          <h3>Força cortante para a armadura mínima</h3>
+          <p>
+            Para o exemplo de uma viga biapoiada, a força cortante é uma função
+            linear decrescente. Isso significa que diminui até zero e depois
+            volta a aumentar com sinal invertido. Existe um intervalo de
+            comprimento da viga em que podemos utilizar apenas a armadura
+            mínima. A localização pode ser obtida por meio do valor da força
+            cortante mínima.
+          </p>
+
+          <p>A força cortante mínima pode ser calculada por:</p>
+          \[V_{sd,mín} = 0{,}0137 b_w \cdot d \cdot f_{ck}^{2/3} = 0{,}0137
+          \cdot 18 \cdot 54 \cdot 20^{2/3} = 98{,}1 \text{ kN} \]
+
+          <p>
+            Como \(V_{sd} > V_{sd,mín}\) é necessário calcular a armadura de
+            cisalhamento.
+          </p>
+
+          <h3>Cálculo da armadura de cisalhamento</h3>
+          \[V_{sd} = V_c - V_{sw}\]
+
+          <p>Na flexão simples</p>
+
+          \[V_c = V_{c0} = 0{,}6 f_{ctd} \cdot b_w \cdot d \] \[f_{ctd} =
+          \frac{0{,}7 \cdot 0{,}3}{\gamma_c} f_{ck}^{2/3} =\frac{0{,}7 \cdot
+          0{,}3 }{1{,}4} \cdot 20^{2/3} = 1{,}105 \text{ MPa} \] \[V_{c} = 0{,}6
+          \cdot 0{,}1105 \cdot 18 \cdot 54 = 64{,}44 \text{ kN}\]
+
+          <p>Logo</p>
+          \[V_{sw} = 120{,}4 - 64{,}4 = 56 \text{ kN} \]
+
+          <p>O cálculo da armadura, para estribos a 90°, é dado por:</p>
+
+          \[ A_{sw}/s = \frac{ V_{sw} }{ 0{,}9 \cdot d \cdot f_{ywd} } =
+          \frac{56}{0{,}9 \cdot 54 \cdot 50/1{,}4 } = 2{,} 54 \text{ cm²/m } \]
+
+          <h3>Diâmetro do estribo</h3>
+          <p>De acordo com a NBR 6118, o diâmetro dos estribos deve ser:</p>
+          \[ 5 \text{ mm} \le \phi_t \le b_w/10 \]
+
+          <p>
+            Considerando o aço CA-50, o menor diâmetro comercial é de 6,3 mm.
+            Inicialmente, este valor será o adotado.
+          </p>
+
+          <h3>Espaçamentos mínimos e máximos longitudinais</h3>
+          <p>
+            O espaçamento mínimo deve ser igual ao diâmetro do vibrador mais 1
+            cm, para que seja garantido um adensamento adequado do concreto.
+          </p>
+          Para o espaçamento máximo, a seguinte verificação deve ser feita:
+          \[\text{ Se } V_{sd} \le 0{,}67 V_{Rd2} \rightarrow s_{máx} = 0{,}6d
+          \le 30 \text{ cm} \] \[\text{ Se } V_{sd} > 0{,}67 V_{Rd2} \rightarrow
+          s_{máx} = 0{,}3d \le 20 \text{ cm} \]
+          <p>Assim:</p>
+          \[0{,}67 V_{Rd2} = 231 \text{ kN} \]
+          <p>Logo:</p>
+          \[ s_{máx} = 30 \text{ cm} \]
+
+          <h3>
+            Espaçamento máximo entre os ramos verticais dos estribos
+            (transversal)
+          </h3>
+          \[\text{ Se } V_{sd} \le 0{,}20 V_{Rd2} \rightarrow s_{t,máx} = d \le
+          80 \text{ cm} \] \[\text{ Se } V_{sd} > 0{,}20 V_{Rd2} \rightarrow
+          s_{t,máx} = 0{,}6d \le 35 \text{ cm} \]
+          <p>Assim:</p>
+          \[0{,}20V_{Rd2} = 69 \text{ kN} \]
+          <p>Logo:</p>
+          \[ s_{t,máx} = 32{,}5 \text{ cm} \]
+          <p>Como a largura da viga é de 18 cm e a distância máxima entre os ramos verticais será de menos de 14 cm, dois ramos são suficientes.</p>
+          <h3>Espaçamento entre os estribos calculados</h3>
+          <p>Considerando diâmetro de 6,3 mm e estribos de dois ramos, a área útil de cade estribo será:</p>
+          \[ 2 A_{6,3} = 2 \cdot 0{,}312 = 0{,}624 \text{ cm²} \]
+          <p>O número de estribos por metro da armadura calculada será:</p>
+          \[  n = \frac{2{,}54}{0{,}624} = 4 \text{ barras por metro}  \]
+          <p>Com 4 barras por metro, o espaçamento será cerca de:</p>
+          \[s = 100 / (4-1) = 33{,}3 \text{ cm}\]
+          <p>O valor acima supera o espaçamento máximo, portanto será adotado o valor de 30 cm para o espaçamento.</p>
+          <h3>Espaçamento considerando a área mínima</h3>
+          <p>De forma análoga:</p>
+           \[  n = \frac{1{,}59}{0{,}624} = 3 \text{ barras por metro}  \]
+           \[s = 100 / (3-1) = 50 \text{ cm}\]
+           <p>Para este caso, também deve ser adotado o espaçamento de 30 cm.</p>
+           <h3>Número total de estribos</h3>
+           <p>O número total de estribos deve ser calculado por trecho onde os espaçamento se diferem. Neste exemplo, o espaçamento é o mesmo para ambos os trechos, assim:</p>
+           \[ n_{tot} = 670/30+1 = 23 \text{ estribos} \]
+           <h3>Formato do estribo e pinos de dobramento</h3>
+           <p>Seguindo as recomensações da NBR 6118, o diâmetros pinos de dobramento dos estribos deve ser 3\( \phi_t \) para aço CA-50 e diâmetro menor ou igual a 10 mm. Assim:</p>
+           \[ D_{pino} = 3 \cdot 0{,}63 =1{,}9 \text{ cm} \]
+           <p>Neste exemplo, vamos considerar a ancoragem do estribo a 90°. Entretanto, a norma recomenda que, preferencialmente, a ancoragem deve ser a 135°.</p>
+           <p>Para ancoragem a 90° o comprimento da ancoragem deve ser de \(10 \phi_t \ge 7 cm\), o que resulta num comprimento de 7 cm. O comprimento do estribo pode então ser calculado com base nas dimensões da seção e do cobrimento nominal:</p>
+           \[l_{estribo}  =  2 \cdot (b_w + h) + l_{ancoragem} + D_{pino} - 4 \cdot c_{nom}  \]
+           \[l_{estribo} = 2 \cdot (18+60) + 7 + 2 - 4 \cdot 2 = 157 \text{ cm} \]
+        
+           <h3>Detalhamento</h3>
+
+          <div class="imagem-container">
+            <img src="imagens/cisalhamento-det.png" alt="Exemplo - els" width="600" />
+            <p class="legenda">Detalhamento dos estribos</p>
+          </div>
+
+
+
+          <script src="script.js"></script>
         </div>
       </div>
-      <div class="box">
-        <h2>Solução</h2>
-        <h3>Força cortante de cálculo</h3>
-        <p>O primeiro passo é construir o diagrama de força cortante e determinar o valor da força cortante máxima. Para
-          a viga do problema: </p>
-        \[V_k = 86 \text{ kN}\]
-        \[ V_{sd} = \gamma_f V_k = 120{,}4 \text{ kN} \]
-
-        <h3>Esmagamento das bielas de compressão</h3>
-
-        <p>Primeiramente é necessário satisfazer a condição de esmagamento das bielas de compressão:</p>
-        \[ V_{sd} \le V_{Rd2} \]
-        <p>e</p>
-        \[ V_{Rd2} = 0{,}27 \Bigg( 1 - \frac{f_{ck}}{250} \Bigg) f_{cd} \cdot b_w \cdot d \]
-        <p>Considerando a altura útil de 54 cm, tem-se:</p>
-        \[ V_{rd2} = 0{,}27 \Bigg( 1- \frac{20}{250} \Bigg) \frac{2{,}0}{1{,}4} \cdot 18 \cdot 54 = 344{,}9 \text{ KN}
-        \]
-        <p>Portanto, a condição acima é satisfeita, não ocorrendo o esmagamento das bielas. Logo, podemos prosseguir com
-          os cálculos.</p>
-
-        <h3>Cálculo da armadura mínima</h3>
-
-        <p>A armadura mínima na condição do estribos a 90° é:</p>
-        \[A_{sw,mín} = \frac{20 f_{ctm}}{f_{ywk}} b_w \]
-
-        \[f_{ctm} = 0{,}3 f_{ck}^{2/3} = 2{,}21 \text{ MPa}\]
-
-        \[A_{sw,mín} = \frac{20 \cdot 0{,}221}{50}\cdot 18 = 1{,}59 \text{ cm²} \]
-
-        <h3>Força cortante para a armadura mínima</h3>
-        <p>Para o exemplo de uma viga biapoiada, a força cortante é uma função linear decrescente. Isso significa que
-          diminui até zero e depois volta a aumentar com sinal invertido. Existe um intervalo de comprimento da viga em
-          que podemos utilizar apenas a armadura mínima. A localização pode ser obtida por meio do valor da força
-          cortante mínima.</p>
-
-        <p>A força cortante mínima pode ser calculada por:</p>
-        \[V_{sd,mín} = 0{,}0137 b_w \cdot d \cdot f_{ck}^{2/3} = 0{,}0137 \cdot 18 \cdot 54 \cdot 20^{2/3} = 98{,}1
-        \text{ kN} \]
-
-        <p>Como \(V_{sd} > V_{sd,mín}\) é necessário calcular a armadura de cisalhamento. </p>
-
-        <h3>Cálculo da armadura de cisalhamento</h3>
-        \[V_{sd} = V_c - V_{sw}\]
-
-        <p>Na flexão simples</p>
-
-        \[V_c = V_{c0} = 0{,}6 f_{ctd} \cdot b_w \cdot d \]
-
-        \[f_{ctd} = \frac{0{,}7 \cdot 0{,}3}{\gamma_c} f_{ck}^{2/3} =\frac{0{,}7 \cdot 0{,}3 }{1{,}4} \cdot 20^{2/3} =
-        1{,}105 \text{ MPa} \]
-
-        \[V_{c} = 0{,}6 \cdot 0{,}1105 \cdot 18 \cdot 54 = 64{,}44 \text{ kN}\]
-
-        <p>Logo</p>
-        \[V_{sw} = 120{,}4 - 64{,}4 = 56 \text{ kN} \]
-
-        <p>O cálculo da armadura, para estribos a 90°, é dado por:</p>
-
-        \[ A_{sw}/s = \frac{ V_{sw} }{ 0{,}9 \cdot d \cdot f_{ywd} } = \frac{56}{0{,}9 \cdot 54 \cdot 50/1{,}4 } = 2{,}
-        54 \text{ cm²/m } \]
-
-
-
-
-
-
-
-        <script src="script.js"></script>
-      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
