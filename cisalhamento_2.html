@@ -61,10 +61,12 @@
         <div class="box">
           <h2>Exemplo</h2>
           <p>
-            Para a viga da figura seguinte, dimensionar e detalhar a armadura de
-            cisalhamento (estribos) usando o modelo de cálculo I. São
-            conhecidos:
+            Considere o esquema estático mostrado na figura e os seguintes
+            dados:
           </p>
+          <p>\(h = 60\) cm</p>
+          <p>\(b_w =18\) cm</p>
+          <p>\(d = 45 \) cm</p>
           <p>$\gamma_c = \gamma_f$ = 1,4;</p>
           <p>$\gamma_s$ = 1,15;</p>
           <p>Concreto C20, aço CA-50;</p>
@@ -72,20 +74,32 @@
           <p>$c_{nom} = $ 2,0 cm;</p>
 
           <div class="imagem-container">
-            <img src="imagens/viga-ex001.png" alt="Exemplo - els" width="600" />
-            <p class="legenda">Planta de formas do exemplo</p>
+            <img
+              src="imagens/viga-cisalhamento-2.png"
+              alt="Exemplo - els"
+              width="700"
+            />
+            <p class="legenda">Esquema esttático da viga</p>
           </div>
         </div>
         <div class="box">
-          <h2>Solução</h2>
+          <h2>Solução para o tramo 1</h2>
           <h3>Força cortante de cálculo</h3>
           <p>
             O primeiro passo é construir o diagrama de força cortante e
             determinar o valor da força cortante máxima. Para a viga do
             problema:
           </p>
-          \[V_k = 86 \text{ kN}\] \[ V_{sd} = \gamma_f V_k = 120{,}4 \text{ kN}
-          \]
+
+          <p>
+            \[V_{k,A} = 93{,}39 \text{ kN}\] \[ V_{sd, A} = \gamma_f V_k =
+            130{,}7 \text{ kN} \]
+          </p>
+
+          <p>
+            \[V_{k,B} = 132{,}6 \text{ kN}\] \[ V_{sd, B} = \gamma_f V_k =
+            185{,}7 \text{ kN} \]
+          </p>
 
           <h3>Esmagamento das bielas de compressão</h3>
 
@@ -114,12 +128,11 @@
 
           <h3>Força cortante para a armadura mínima</h3>
           <p>
-            Para o exemplo de uma viga biapoiada, a força cortante é uma função
-            linear decrescente. Isso significa que diminui até zero e depois
-            volta a aumentar com sinal invertido. Existe um intervalo de
-            comprimento da viga em que podemos utilizar apenas a armadura
-            mínima. A localização pode ser obtida por meio do valor da força
-            cortante mínima.
+            Para o exemplo de uma viga, a força cortante é uma função linear
+            decrescente. Isso significa que diminui até zero e depois volta a
+            aumentar com sinal invertido. Existe um intervalo de comprimento da
+            viga em que podemos utilizar apenas a armadura mínima. A localização
+            pode ser obtida por meio do valor da força cortante mínima.
           </p>
 
           <p>A força cortante mínima pode ser calculada por:</p>
@@ -142,12 +155,23 @@
           \cdot 0{,}1105 \cdot 18 \cdot 54 = 64{,}44 \text{ kN}\]
 
           <p>Logo</p>
-          \[V_{sw} = 120{,}4 - 64{,}4 = 56 \text{ kN} \]
+
+          <p>\[V_{sw,A} = 130{,}7 - 64{,}4 = 66{,}3 \text{ kN} \]</p>
+          <p>\[V_{sw,B} = 185{,}7 - 64{,}4 = 121{,}3 \text{ kN} \]</p>
 
           <p>O cálculo da armadura, para estribos a 90°, é dado por:</p>
 
-          \[ A_{sw}/s = \frac{ V_{sw} }{ 0{,}9 \cdot d \cdot f_{ywd} } =
-          \frac{56}{0{,}9 \cdot 54 \cdot 50/1{,}4 } = 2{,} 54 \text{ cm²/m } \]
+          <p>
+            \[ A_{sw,A}/s = \frac{ V_{sw,A} }{ 0{,}9 \cdot d \cdot f_{ywd} } =
+            \frac{66{,}3}{0{,}9 \cdot 54 \cdot 50/1{,}4 } = 0{,} 0382 \text{
+            cm²/cm } = 3{,}82\text{ cm²/m } \]
+          </p>
+
+          <p>
+            \[ A_{sw,B}/s = \frac{ V_{sw,B} }{ 0{,}9 \cdot d \cdot f_{ywd} } =
+            \frac{121{,}3}{0{,}9 \cdot 54 \cdot 50/1{,}4 } = 0{,} 0699 \text{
+            cm²/cm } = 6{,}99\text{ cm²/m } \]
+          </p>
 
           <h3>Diâmetro do estribo</h3>
           <p>De acordo com a NBR 6118, o diâmetro dos estribos deve ser:</p>
@@ -194,25 +218,56 @@
           </p>
           \[ 2 A_{6,3} = 2 \cdot 0{,}312 = 0{,}624 \text{ cm²} \]
           <p>O número de estribos por metro da armadura calculada será:</p>
-          \[ n = \frac{2{,}54}{0{,}624} = 4 \text{ barras por metro} \]
-          <p>Com 4 barras por metro, o espaçamento será cerca de:</p>
-          \[s = 100 / (4-1) = 33{,}3 \text{ cm}\]
           <p>
-            O valor acima supera o espaçamento máximo, portanto será adotado o
-            valor de 30 cm para o espaçamento.
+            \[ n_A = \frac{3{,}82}{0{,}624} = 6{,}12 \cong 7 \text{ barras/m} \]
           </p>
+          <p>\[s_A = 100 / (7-1) = 16{,}7 \text{ cm}\]</p>
+
+          <p>
+            \[ n_B = \frac{6{,}99}{0{,}624} = 11{,}2 \cong 12 \text{ barras/m}
+            \]
+          </p>
+          <p>\[s_B = 100 / (12-1) = 9{,}1 \text{ cm}\]</p>
+          <p>
+            Ambos os casos estão entre os limites de espaçamentos máximos e
+            mínimos portanto, o diâmetro de 6,3 mm será mantido.
+          </p>
+
           <h3>Espaçamento considerando a área mínima</h3>
           <p>De forma análoga:</p>
           \[ n = \frac{1{,}59}{0{,}624} = 3 \text{ barras por metro} \] \[s =
           100 / (3-1) = 50 \text{ cm}\]
-          <p>Para este caso, também deve ser adotado o espaçamento de 30 cm.</p>
-          <h3>Número total de estribos</h3>
+          <p>Para este caso, deve ser adotado o espaçamento de 30 cm.</p>
+
+          <h3>Número de estribos e posição adequada para cada espaçamento</h3>
           <p>
-            O número total de estribos deve ser calculado por trecho onde os
-            espaçamento se diferem. Neste exemplo, o espaçamento é o mesmo para
-            ambos os trechos, assim:
+            Com o diagrama de esforço cortante de cálculo e usando semelhança de
+            triângulos, conseguimos encontrar as distâncias de influência de
+            cada armadura, conforme figura seguinte.
           </p>
-          \[ n_{tot} = 670/30+1 = 23 \text{ estribos} \]
+
+          <div class="imagem-container">
+            <img
+              src="imagens/diagrama-cisalhamento.png"
+              alt="Exemplo - els"
+              width="700"
+            />
+            <p class="legenda">Regiões de influência para o cisalhamento</p>
+          </div>
+
+          <p>
+            Assim, podemos calcular o número de estribos por trecho, da seguinte
+            maneira:
+          </p>
+
+          <p>\[ n_A = 52/16{,}7 = 3,{11} \cong 4 \text{ barras} \]</p>
+          <p>
+            \[ n_{mín} =( 2 \cdot 155 )/30 = 10{,}3 \cong 11 \text{ barras} \]
+          </p>
+          <p>\[ n_B = 138/9,1 = 15{,}2 \cong 16 \text{ barras}\]</p>
+
+          <p>N\umero total de barras = 31.</p>
+
           <h3>Formato do estribo e pinos de dobramento</h3>
           <p>
             Seguindo as recomensações da NBR 6118, o diâmetros pinos de
@@ -239,9 +294,18 @@
 
           <div class="imagem-container">
             <img
-              src="imagens/cisalhamento-det.png"
+              src="imagens/det-cisa-02.png"
               alt="Exemplo - els"
-              width="600"
+              width="780"
+            />
+            <p class="legenda">Detalhamento dos estribos</p>
+          </div>
+
+          <div class="imagem-container">
+            <img
+              src="imagens/det-cisa-02-estribo.png"
+              alt="Exemplo - els"
+              width="150"
             />
             <p class="legenda">Detalhamento dos estribos</p>
           </div>
