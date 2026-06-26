@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armadura simples</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [
+                ["$", "$"],
+                ["\\(", "\\)"],
+            ],
+        },
+        svg: {
+            fontCache: "global",
+        },
+    };
+</script>
+
+<body>
+    <div class="wrapper">
+        <!-- Menu Lateral -->
+        <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>CONCRETO 1</h2>
+            </div>
+            <ul>
+                <li><a href="armadura_simples_1.html">Armadura simples 1</a></li>
+                <li><a href="armadura_simples_2.html">Armadura simples 2</a></li>
+                <li><a href="armadura_dupla.html">Armadura dupla</a></li>
+                <li><a href="lajes-dimensionamento.html">Lajes</a></li>
+                <li><a href="cisalhamento.html">Cisalhamento</a></li>
+                <li><a href="cisalhamento_2.html">Cisalhamento 2</a></li>
+                <li><a href="torcao.html">Torção de vigas</a></li>
+                <li><a href="sapata_centrada.html">----------</a></li>
+                <li><a href="sapata_flexo_comp_normal.html">------------</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">🌙 Mudar Tema</button>
+        </nav>
+
+        <!-- Botão de esconder/mostrar o menu -->
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+
+        <!-- Conteúdo -->
+        <div class="content">
+            <header>
+                <h1>Viga submetida a esforço de torção</h1>
+                <p>
+                    Neste tópico será apresentado um exemplo completo de dimensionamento
+                </p>
+            </header>
+
+            <div class="box">
+                <h2>Exemplo</h2>
+
+                <p>Dimensionar a viga da figura à torção, considerando os seguintes dados:</p>
+                <p>Concreto C25, aço CA-50, \(c_{nom} =\) 2 cm, \(T_k\) = 20 kNm, \(M_k\) = 130 kNm, \(V_k\) = 100 kN,
+                    \(d_{máx =}\) 19 mm, \(L_{ef}\) = 415 cm, \(h = \) 50 cm, \(b_w\) = 30 cm, \(d = \) 45 cm. </p>
+                <div class="imagem-container">
+                    <img src="imagens/torcao-1.png" alt="Exemplo - els" width="400" />
+                    <p class="legenda">Esquema da viga e respectivos diagramas</p>
+                </div>
+
+                <h2>Solução</h2>
+                <p>Além das armaduras dedivo à torção, também é necessário determinar as armaduras de flexão e de forção
+                    cortante. Consdere que estas armaduras já foram calculadas e estão listadas abaixo.</p>
+
+                <h3>Efeito de flexão</h3>
+
+                <p>\[ A_s = 10{,}46 \text{ cm²}\]</p>
+
+                <h3>Efeito de cisalhamento devido à força cortante</h3>
+
+                <p>\[ \frac{A_{sw}}{s} = 3{,}08 \text{ cm²/m} \]</p>
+
+                <h3>Efeito de cisalhamento devido à torção</h3>
+
+                <p>\[ T_{sd} = \gamma_f \cdot T_k = 1{,}4 \cdot 2000 = 2800 \text{ kNcm} \]</p>
+
+                <h4>Verificação das diagonais comprimidas</h4>
+                <p>Área da seção transversal:</p>
+                <p>\[ A = b_w \cdot h = 30 \cdot 50 =1500 \text{ cm²} \]</p>
+                <p>Perímetro da seção transversal:</p>
+                <p>\[ u = 2 (b_w + h) = 2(30+50) = 160 \text{ cm} \]</p>
+
+                <p>Limite da espessura equivalente:</p>
+
+                <p>\[ h_e \le \frac{A}{u} = \frac{1500}{160} = 9{,}375 \text{ cm} \]</p>
+
+                <p>\[h_e \ge 2 c_1 \]</p>
+
+                <p>Onde \(c_1\) é a distância até o centóide da primeira armadura longitudinal. A determinação do
+                    diâmetro das armaduras ainda não foi feito, portanto será considerado \( \phi_l = 12{,}5 \) mm e \(
+                    \phi_t = 8 \) mm. Assim: </p>
+                <p>\[ c_1 = \phi_l/2 + \phi_t + C_{nom} = 1{,}25/2 +0{,}8 + 2 = 3{,}425 \text{ cm}\]</p>
+
+                <p>\[h_e \ge 2 c_1 = 2 \cdot 3{,}425 =6{,}85 \text{ cm} \]</p>
+
+                <p>Portanto, o valor adotado será a média entre os dois valores anteriores:</p>
+                <p>\[ h_e =(6{,}85+9{,}375)/2 = 8{,}11 \text{ cm} \]</p>
+
+                <p>Os valores de área efetiva e perímetro efetivo serão:</p>
+                <p>\[ A_e = (b_w-h_e)\cdot(h-h_e) = (30-8{,}11) \cdot ( 50-8{,}11 = 916{,}81 \text{ cm²} ) \]</p>
+                <p>\[ u_e = 2[ (b_w-h_e) + (h-h_e)] = 2 [(30-8{,}11)+(50-8{,}11)] = 127{,}55 \text{ cm} \]</p>
+
+                <p>A parcela resistente à torção relativa ao esmagamento das diagonais do concreto, será:</p>
+                <p>\[ T_{Rd2} = 0{,}5 \Bigg( 1- \frac{f_{ck}}{250} \Bigg) A_e \cdot h_e \cdot sen(2 \theta) \]</p>
+
+                <p>É importante que o ângulo da biela de compressão \( \theta\) seja o mesmo ângulo considerando no
+                    dimensionamento à força cortante.</p>
+
+                <p>Logo:</p>
+
+                <p>\[ T_{Rd2} = 0{,}5
+                    \Bigg( 1 + \frac{25}{250} \Bigg) 916{,}81 \cdot 8{,}11 \cdot sen(90°) = 5976{,}68 \text{ KNcm} \]
+                </p>
+
+                <p>Para que não ocorra o esmagamento das bielas:</p>
+
+                <p>\[ \frac{V_{sd}}{V_{Rd2}} + \frac{T_{sd}}{T_{Rd2}} \le 1 \]</p>
+
+                <p>\[ \frac{140}{586} + \frac{2800}{5976{,}7} = 0{,}71 \]</p>
+                <P>Portanto, pela avaliação acima, não ocorrá o esmagamento das diagonas do concreto.</P>
+
+                <h4>Armaduras mínimas</h4>
+
+                <p>\[ f_{ctm} = 0{,}3 f_{ck}^{2/3} = 2{,}56 \text{ MPa} \]</p>
+
+                <p>\[ A_{sl,mín} = \frac{f_{ctm}}{f_{ywk}} h_e = \frac{ 20 \cdot 0{,}256}{50} \cdot 8{,}11 = 0{,}0083
+                    \text{cm²/cm}= 0{,}83 \text{ cm²/m} \]</p>
+
+                <p>\[ A_{90l,mín} = \frac{f_{ctm}}{f_{ywk}} b_w = \frac{ 20 \cdot 0{,}256}{50} \cdot 30 = 0{,}0308
+                    \text{ cm²/cm} = 3{,}08 \text{ cm²/m} \]</p>
+
+                <h4>Armaduras necessárias</h4>
+
+                <p>Armadura longitudinal</p>
+
+                <p>\[ \frac{A_{sl}}{u_e} = \frac{T_{sd}}{2 A_e f_{ywd}} = \frac{2800}{2 \cdot 916{,}81 \cdot (50/1{,}4)}
+                    = 0{,}0351 \text{ cm²/cm} \]</p>
+
+                <p>Armadura transversal</p>
+                <p>\[ \frac{A_{s90}}{s} = \frac{T_{sd}}{2 A_e f_{ywd}} = \frac{2800}{2 \cdot 916{,}81 \cdot (50/1{,}4)}
+                    = 0{,}0351 \text{ cm²/cm} \]</p>
+
+
+                <h4>Distribuição das armaduras longitudinais</h4>
+                <p>O valor das armaduras longitudinais de torção devem ser distribuídas igualmente ao longo do perímetro
+                    da seção transversal da viga. A distribuição ficará conforme abaixo: </p>
+
+                <p>Face Inferior</p>
+
+                <ul>
+                    <li>De flexão: 0 cm²</li>
+                    <li>De torção: \(A_s = (b_w-h_e)A_{sl} = (30-8{,}11) \cdot 0{,}0351 = 0{,}768 \text{ cm²} \)</li>
+                    <li>Total: \(A_{s,total} = 0{,}768 \text{ cm²} \)</li>
+                </ul>
+
+
+                <p>Faces laterais</p>
+
+                <ul>
+                    <li>De flexão: 0 cm²</li>
+                    <li>De torção: \(A_s = (h-h_e)A_{sl} = (50-8{,}11) \cdot 0{,}0351 = 1{,}471 \text{ cm²} \)</li>
+                    <li>Total: \(A_{s,total} = 1{,}471 \text{ cm²} \)</li>
+                </ul>
+
+                <p>Face superior</p>
+                <ul>
+                    <li>De flexão: \(10{,}46\) cm²</li>
+                    <li>De torção: \(A_s = (b_w-h_e)A_{sl} = (30-8{,}11) \cdot 0{,}0351 = 0{,}768 \text{ cm²} \)</li>
+                    <li>Total: \(A_{s,total} = 11{,}23 \text{ cm²} \)</li>
+                </ul>
+
+                <h4>Distribuição das armaduras trasnversais</h4>
+                <p>Importante lembrar que para a força cortante, a contabilização é para, no mínimo, 2 ramos, enquanto que para a torção o valor considera apenas um ramo do estribo. Assim, considerando um ramo dos estribos:</p>
+
+                <p>\[  \frac{As,tot}{s} = \frac{A_{s,1ramo}}{s} + \frac{A_{s,90}}{s} =  0{,}0308/2 +  0{,}0351 =0{,}0505 \text{cm²/cm} = 5{,}05 \text{ cm²/m}  \]</p>
+
+
+
+
+                <script src="script.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
