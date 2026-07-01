@@ -177,10 +177,65 @@
                     <li>Total: \(A_{s,total} = 11{,}23 \text{ cm²} \)</li>
                 </ul>
 
-                <h4>Distribuição das armaduras transversais</h4>
-                <p>Importante lembrar que para a força cortante, a contabilização é para, no mínimo, 2 ramos, enquanto que para a torção o valor considera apenas um ramo do estribo. Assim, considerando um ramo dos estribos:</p>
 
-                <p>\[  \frac{As,tot}{s} = \frac{A_{s,1ramo}}{s} + \frac{A_{s,90}}{s} =  0{,}0308/2 +  0{,}0351 =0{,}0505 \text{cm²/cm} = 5{,}05 \text{ cm²/m}  \]</p>
+
+
+
+                <h4>Distribuição das armaduras transversais</h4>
+                <p>Importante lembrar que para a força cortante, a contabilização é para, no mínimo, 2 ramos, enquanto
+                    que para a torção o valor considera apenas um ramo do estribo. Assim, considerando um ramo dos
+                    estribos:</p>
+
+                <p>\[ \frac{As,tot}{s} = \frac{A_{s,1ramo}}{s} + \frac{A_{s,90}}{s} = 0{,}0308/2 + 0{,}0351 =0{,}0505
+                    \text{cm²/cm} = 5{,}05 \text{ cm²/m} \]</p>
+
+                <h4>Disposições construtivas</h4>
+                <p>Para a armadura longitudinal, será adotado diâmetros de 6,3 mm nas faces inferior e laterais e de
+                    16,0 mm na face superior, pois o diâmetro de 12,5 mm dava uma quantidade muito grande de barras.</p>
+
+                <p>Armadura longitudinal inferior:</p>
+                <p>\[ A_{6,3} = 0{,}311 \text{ cm²} \]</p>
+
+                <p>\[ n = 0{,}768/ 0{,}311 = 2{,}47 \cong 3 \text{ barras} \]</p>
+
+                <p>Armaduras longitudinais laterais</p>
+
+                <p>\[ n = 1{,}471/ 0{,}311 = 4{,}72 \cong 5 \text{ barras} \]</p>
+
+                <p>Armadura longitudinal superior</p>
+                <p>\[ A_{16} = 2{,}01 \text{ cm²} \]</p>
+                <p>\[ n = 11{,}23/ 2{,}01 = 5{,}59 \cong 6 \text{ barras}\]</p>
+
+                <p>Verificando os valores de número máximo de barras por camada na seção da viga, constata-se que é
+                    possível colocar até 6 barras de 16 mm por camada na largura da viga de 30 cm. Com base nessa
+                    verificação e na de espaçamento mínimo vertical (2 cm), a distribuição de barras longitudinais na
+                    viga fica conforme figura seguinte:</p>
+                <div class="imagem-container">
+                    <img src="imagens/secao-viga-torcao.png" alt="Exemplo - els" width="300" />
+                    <p class="legenda">Distribuição das armaduras longitudinais</p>
+                </div>
+
+                <p>Para a armadura transversal, lembrando que os cálculos anteriores foram feitos considerando 1 ramo e
+                    que os diâmetro precisam ser maiores que 5 mm e maiores que \(b_w/10 = 30/10 = 3\) cm (30 mm), será
+                    conforme os cálculos seguintes.</p>
+
+                <p>Para os estribos, optou-se por utilizar diâmetro de 8 mm, uma vez que diâmetro de 6,3 mm resulta em
+                    um espaçamento muito pequeno.</p>
+                <p>\[ A_8 = 0{,}502 \text{ cm²} \]</p>
+
+                <p>\[  s = 0{,}502/0{,}0505 =9{,}94 \text{ cm}    \]</p>
+
+                <div class="imagem-container">
+                    <img src="imagens/estribo-torcao.png" alt="Exemplo - els" width="550" />
+                    <p class="legenda">Detalhamento dos estribos</p>
+                </div>
+
+
+
+
+
+
+
 
 
 
